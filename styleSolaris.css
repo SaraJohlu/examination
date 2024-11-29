@@ -4,163 +4,164 @@
   box-sizing: border-box;
 }
 
-body {
-  display: flex;
-  flex-direction: column;
-  background-image: linear-gradient(to bottom, rgb(32, 49, 127), rgb(22, 22, 52), rgb(3, 0, 14));
-  width: 100%;
-  height: 100vh;
-}
-body .planets {
-  position: relative;
-}
-body .planet1 {
-  position: absolute;
-  background-image: linear-gradient(to bottom, rgb(238, 195, 53), rgb(202, 97, 22));
-  width: 250px;
-  height: 250px;
-  margin-left: 62px;
-  border-radius: 50%;
-  top: -130px;
-  box-shadow: 1px 1px 50px 2px rgba(255, 68, 0, 0.692);
-}
-body .planet2 {
-  position: absolute;
-  top: 170px;
-  left: -20px;
-  background-image: linear-gradient(to bottom, rgb(255, 1, 1), rgb(86, 27, 11));
-  border-radius: 50%;
-  width: 60px;
-  height: 60px;
-}
-body .planet3 {
-  position: absolute;
-  top: 150px;
-  left: 60px;
-  background-image: linear-gradient(180deg, rgb(176, 193, 54), rgb(181, 145, 135));
-  border-radius: 50%;
-  width: 100px;
-  height: 100px;
-}
-body .planet4 {
-  position: absolute;
-  top: 182px;
-  left: 185px;
-  background-color: grey;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-}
-body .planet5 {
-  position: absolute;
-  top: 185px;
-  left: 252px;
-  background-color: rgb(47, 88, 250);
-  border-radius: 50%;
-  width: 35px;
-  height: 35px;
-}
-body .planet6 {
-  position: absolute;
-  top: 160px;
-  left: 310px;
-  background-color: rgb(243, 213, 106);
-  border-radius: 50%;
-  width: 80px;
-  height: 80px;
-}
-body .planet6ring {
-  position: absolute;
-  top: 195px;
-  left: 250px;
-  background-color: rgba(151, 142, 111, 0.612);
-  border-radius: 50%;
-  width: 200px;
-  height: 10px;
-  transform: rotate(150deg);
-}
-body main {
-  position: absolute;
-  top: 300px;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-}
-body main .h1 {
-  text-align: center;
-  align-items: center;
-  color: white;
-  font-family: "ubuntu", sans-serif;
-  font-size: xx-large;
-}
-body main .h2 {
-  text-align: center;
-  align-items: center;
-  color: rgb(165, 230, 13);
-  font-family: "genos", sans-serif;
-  font-size: 70px;
-}
-body main .searchbar {
-  margin-top: 45px;
-  width: 280px;
-  height: 60px;
-  background-color: rgba(240, 248, 255, 0.849);
-  border: none;
-  border-radius: 10px;
-  text-align: center;
-  font-size: large;
-  font-weight: 700;
-  color: rgba(255, 255, 255, 0.723);
-}
-body footer {
-  display: flex;
-  flex-direction: row;
-  justify-content: start;
-  align-items: center;
-  width: 100%;
-  position: fixed;
-  bottom: 130px;
-  left: 10px;
-}
-body footer .copyW {
-  color: rgba(255, 255, 255, 0.668);
-}
-body footer .instagram {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.667);
-  text-align: center;
-  justify-content: center;
-  align-content: center;
-  color: black;
-  text-decoration: none;
-  margin: 0px 10px 0px 0px;
-  margin-left: 20px;
-}
-body footer .github {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.667);
-  text-align: center;
-  justify-content: center;
-  align-content: center;
-  color: black;
-  text-decoration: none;
-  margin: 0px 10px 0px 0px;
-}
-body footer .mejl {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.667);
-  text-align: center;
-  justify-content: center;
-  align-content: center;
-  color: black;
-  text-decoration: none;
-  margin: 0px 10px 0px 0px;
+@media (max-width: 670px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    background-image: linear-gradient(to bottom, rgb(32, 49, 127), rgb(22, 22, 52), rgb(3, 0, 14));
+    width: 100%;
+    height: 100vh;
+  }
+  body .planets {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  body .planets .sun {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: -100px;
+    margin-bottom: 10px;
+  }
+  body .planets .sun .planet1 {
+    background-image: linear-gradient(to bottom, rgb(238, 195, 53), rgb(202, 97, 22));
+    width: 230px;
+    height: 230px;
+    border-radius: 50%;
+    box-shadow: 1px 1px 50px 2px rgba(255, 68, 0, 0.692);
+  }
+  body .planets .planet {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 20px;
+  }
+  body .planets .planet .planet2 {
+    background-image: linear-gradient(to bottom, rgb(255, 1, 1), rgb(86, 27, 11));
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    margin-top: 10px;
+  }
+  body .planets .planet .planetWithRing .planet3 {
+    position: relative;
+    background-image: linear-gradient(180deg, rgb(176, 193, 54), rgb(181, 145, 135));
+    border-radius: 50%;
+    width: 90px;
+    height: 90px;
+  }
+  body .planets .planet .planetWithRing .planet3ring {
+    position: absolute;
+    top: 200px;
+    left: 80px;
+    background-color: rgba(151, 142, 111, 0.612);
+    border-radius: 50%;
+    width: 200px;
+    height: 10px;
+    transform: rotate(150deg);
+  }
+  body .planets .planet .planet4 {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-image: linear-gradient(to bottom, sandybrown, black);
+    padding: 0px 20px 0px 0px;
+  }
+  body main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+  body main .h1 {
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-family: "ubuntu", sans-serif;
+    font-size: xx-large;
+  }
+  body main .h2 {
+    text-align: center;
+    align-items: center;
+    color: rgb(230, 201, 13);
+    font-family: "genos", sans-serif;
+    font-size: 70px;
+    margin-top: -20px;
+  }
+  body main .searchbar {
+    margin-top: 20px;
+    width: 280px;
+    height: 60px;
+    background-color: rgba(240, 248, 255, 0.849);
+    border: none;
+    border-radius: 10px;
+    text-align: center;
+    font-size: large;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.723);
+  }
+  body footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 50px;
+    padding-bottom: 10px;
+  }
+  body footer .copyW {
+    color: rgba(255, 255, 255, 0.668);
+    padding: 5px;
+    margin: 5px;
+  }
+  body footer .links {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  body footer .links .instagram {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.667);
+    text-align: center;
+    justify-content: center;
+    align-content: center;
+    color: black;
+    text-decoration: none;
+    margin: 0px 10px 0px 0px;
+  }
+  body footer .links .github {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.667);
+    text-align: center;
+    justify-content: center;
+    align-content: center;
+    color: black;
+    text-decoration: none;
+    margin: 0px 10px 0px 0px;
+  }
+  body footer .links .mejl {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.667);
+    text-align: center;
+    justify-content: center;
+    align-content: center;
+    color: black;
+    text-decoration: none;
+    margin: 0px 10px 0px 0px;
+  }
 }/*# sourceMappingURL=styleSolaris.css.map */
