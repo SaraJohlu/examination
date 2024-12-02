@@ -23,13 +23,44 @@ async function fetchData() {
       method: "GET",
       headers: { "x-zocom": `${keyApi}` },
     });
-    
+
     const data = await response2.json();
     console.log(data);
+    const names = document.getElementById("Name");
+    const latinName = document.getElementById("latinName");
+    const type = document.getElementById("type");
+    const distanceSun = document.getElementById("distanceSun");
+    const circumference	= document.getElementById("circumference");
+    const minTemp = document.getElementById("minTemp");
+    const maxTemp = document.getElementById("maxTemp");
+    const facts = document.getElementById("facts");
+    const moons = document.getElementById("moons")
+
+    names.textContent = data.bodies[5].name;
+
+    
+
   }
    catch (error) {
     console.error(error);
   }
 }
+
+const button = document.getElementById("button");
+const popUp = document.getElementById("popUp");
+
+button.addEventListener("click", () => {
+    fetchData();
+
+    if(popUp.style.display === "none")
+       popUp.style.display = "block";
+
+    else{
+        popUp.style.display = "none"
+    }
+
+});
+
+
 
 fetchData();
