@@ -19,30 +19,72 @@
 </head>
 
 <body id="body">
-    <header class="planets">
+<!-- Making a header that's going to include all the planets in Solaris
+trying to make them have both class and id name as the planets names 
+to make it more understandeble. -->
 
-        <div id="sun" class="sun">
-            <p class="planet1" id="planet1"></p>
+    <header class="solaris"> 
+
+<!-- First star, the sun, having one div -->
+        <div id="sunny" class="sunny">
+            <p class="sun" id="sun"></p>
         </div>
-        
-        <div id="planet" class="planet">
-            <p class="planet2" id="planet2"></p>
+
+<!-- Making a div element for all the rest 8 planets. Where Saturnus and Neptunus
+ have their own divs for making the planet ring around them more easier
+ in Sass/Css -->
+        <div id="planets" class="planets">
+
+            <p class="merkurius" id="merkurius"></p>
+            <p class="venus" id="venus"></p>
+            <p class="earth" id="earth"></p>
+            <p class="mars" id="mars"></p>
+            <p class="jupiter" id="jupiter"></p>
        
-            <div class="planetWithRing" id="planetWithRing">
-                <p class="planet3" id="planet3"></p>
-                <p class="planet3ring" id="planet3ring"></p>
+            <div class="planetWithRing1" id="planetWithRing1">
+                <p class="saturnus" id="saturnus"></p>
+                <p class="saturnusRing" id="saturnusRing"></p>
             </div>
 
-            <p class="planet4" id="planet4"></p>
+            <p class="uranus" id="urnaus"></p>
+
+            <div class="planetWithRing2" id="planetWithRing2">
+                <p class="neptunes" id="neptunus"></p>
+                <p class="neptunesRing" id="neptunusRing"></p>
+            </div>
+         
         </div>
 
     </header>
 
     <main>
-        <h1 class="h1" id="h1">Solsystemet</h1>
-        <h2 class="h2" id="h1">Solaris</h2>
+        
+        <section>
+            <h1 class="section1h1" id="h1">Solaris</h1>
+    
+            <input id="searchbar" class="searchbar" type="text" placeholder="Search planet">
+            <button id="button" class="button">🔄</button>
+        </section>
 
-        <input id="searchbar" class="searchbar" type="text" placeholder="Search planet">
+        <section class="popUp" id="popUp">
+            <h1 class="Name" id="Name"></h1>
+            <h2 class="latinName" id="latinName"></h2>
+
+            <article>
+                <h3></h3>
+                <p></p>
+
+                <h3></h3>
+                <p></p>
+
+                <h3></h3>
+                <p></p>
+            </article>
+            
+
+
+        </section>
+
     </main>
 
     <footer>

@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 
-$color1: white;
+$color1: rgb(235, 194, 29);
 $color2: black;
 
 @mixin layout1 {
@@ -30,6 +30,12 @@ $color2: black;
   margin: 0px 10px 0px 0px;
 }
 
+@mixin planetLayout {
+  border-radius: 50%;
+  box-shadow: 0px 0px 10px 1px rgb(94, 93, 81);
+  margin:3px;
+}
+
 @media (max-width: 670px) {
   body {
     @include layout1();
@@ -42,19 +48,19 @@ $color2: black;
     width: 100%;
     height: 100vh;
 
-    .planets {
+    .solaris {
       @include layout1();
       justify-content: center;
       align-items: center;
       width: 100%;
 
-      .sun {
+      .sunny {
         @include layout2();
         justify-content: center;
         margin-top: -100px;
         margin-bottom: 10px;
 
-        .planet1 {
+        .sun {
           background-image: linear-gradient(
             to bottom,
             rgb(238, 195, 53),
@@ -67,29 +73,69 @@ $color2: black;
         }
       }
 
-      .planet {
+      .planets {
         @include layout2();
         justify-content: center;
-        justify-content: space-between;
+        align-items: center;
         width: 100%;
-        padding: 20px;
+        padding: 2px;
 
-        .planet2 {
+        .merkurius {
+          @include planetLayout();
+
           background-image: linear-gradient(
-            to bottom,
-            rgb(255, 1, 1),
-            rgb(86, 27, 11)
-          );
-          border-radius: 50%;
+            to bottom, grey, white);
+
+          width: 10px;
+          height: 10px;
+        }
+
+        .venus {
+          @include planetLayout();
+
+          background-image:linear-gradient(
+            to bottom, white, yellow);
+
+          width: 20px;
+          height: 20px;
+          // margin-top: -60px; 
+        }
+
+        .earth {
+          @include planetLayout();
+
+          background-image:linear-gradient(
+            to bottom, rgb(51, 73, 241), rgb(9, 109, 1), blue);
+
+          width: 30px;
+          height: 30px;
+          // margin-top: -40px;
+        }
+
+        .mars {
+          @include planetLayout();
+          background-color: brown;
+            
+
+          width: 35px;
+          height: 35px;
+          // margin-top: -10px;
+        }
+
+        .jupiter {
+          @include planetLayout();
+
+          background-image:linear-gradient(
+            to bottom, rgb(97, 57, 20), rgb(212, 232, 123), rgb(162, 65, 52));
 
           width: 60px;
           height: 60px;
-
-          margin-top: 10px;
+          // margin-top: -5px;
         }
 
-        .planetWithRing {
-          .planet3 {
+        .planetWithRing1 {
+          .saturnus {
+            @include planetLayout();
             position: relative;
 
             background-image: linear-gradient(
@@ -97,33 +143,64 @@ $color2: black;
               rgb(176, 193, 54),
               rgb(181, 145, 135)
             );
-            border-radius: 50%;
 
-            width: 90px;
-            height: 90px;
+            width: 50px;
+            height: 50px;
+            // margin-top: -10px;
           }
 
-          .planet3ring {
+          .saturnusRing {
             position: absolute;
-            top: 200px;
-            left: 80px;
+            top: 173px;
+            left: 177px;
 
             background-color: rgba(151, 142, 111, 0.612);
             border-radius: 50%;
 
-            width: 200px;
-            height: 10px;
+            width: 95px;
+            height: 5px;
             transform: rotate(150deg);
           }
         }
 
-        .planet4 {
-          width: 70px;
-          height: 70px;
-          border-radius: 50%;
+        .uranus {
+          @include planetLayout();
 
-          background-image: linear-gradient(to bottom, sandybrown, black);
-          padding: 0px 20px 0px 0px;
+          background-image:linear-gradient(
+            to bottom, rgb(42, 35, 171), rgb(250, 250, 247));
+
+          width: 40px;
+          height: 40px;
+        }
+
+        .planetWithRing2 {
+          .neptunes {
+            @include planetLayout();
+            position: relative;
+
+            background-image: linear-gradient(
+              180deg,
+              rgb(54, 86, 193),
+              rgb(46, 24, 132)
+            );
+
+            width: 45px;
+            height: 45px;
+            margin-right: 15px;
+          }
+
+          .neptunesRing {
+            position: absolute;
+            top: 173px;
+            left: 285px;
+
+            background-color: rgba(151, 142, 111, 0.612);
+            border-radius: 50%;
+
+            width: 80px;
+            height: 5px;
+            transform: rotate(210deg);
+          }
         }
       }
     }
@@ -133,28 +210,22 @@ $color2: black;
       width: 100%;
       justify-content: center;
       align-items: center;
-      padding: 20px;
+      
 
-      .h1 {
+      .section1h1 {
         text-align: center;
         align-items: center;
-        justify-content: center;
-        color: white;
-        font-family: "ubuntu", sans-serif;
-        font-size: xx-large;
-      }
-
-      .h2 {
-        text-align: center;
-        align-items: center;
-        color: rgb(230, 201, 13);
+        color: $color1;
         font-family: "genos", sans-serif;
+        font-weight: 300;
         font-size: 70px;
-        margin-top: -20px;
       }
 
       .searchbar {
-        margin-top: 20px;
+        position: relative;
+        text-align: center;
+        align-items: center;
+        margin-top: 10px;
         width: 280px;
         height: 60px;
         background-color: rgba(240, 248, 255, 0.849);
@@ -165,6 +236,19 @@ $color2: black;
         font-weight: 700;
         color: rgba(255, 255, 255, 0.723);
       }
+
+      .button {
+        position: absolute;
+        width: 40px;
+        height: 35px;
+
+        background-color: rgb(187, 186, 186);
+
+        border: none;
+        border-radius: 35px;
+        right: 55px;
+        top: 315px;
+      }
     }
 
     footer {
@@ -173,7 +257,7 @@ $color2: black;
       justify-content: center;
       align-items: center;
       width: 100%;
-      margin-top: 50px;
+      margin-top: 150px;
       padding-bottom: 10px;
 
       .copyW {

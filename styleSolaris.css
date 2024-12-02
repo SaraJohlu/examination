@@ -12,65 +12,121 @@
     width: 100%;
     height: 100vh;
   }
-  body .planets {
+  body .solaris {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
   }
-  body .planets .sun {
+  body .solaris .sunny {
     display: flex;
     flex-direction: row;
     justify-content: center;
     margin-top: -100px;
     margin-bottom: 10px;
   }
-  body .planets .sun .planet1 {
+  body .solaris .sunny .sun {
     background-image: linear-gradient(to bottom, rgb(238, 195, 53), rgb(202, 97, 22));
     width: 230px;
     height: 230px;
     border-radius: 50%;
     box-shadow: 1px 1px 50px 2px rgba(255, 68, 0, 0.692);
   }
-  body .planets .planet {
+  body .solaris .planets {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    justify-content: space-between;
+    align-items: center;
     width: 100%;
-    padding: 20px;
+    padding: 2px;
   }
-  body .planets .planet .planet2 {
-    background-image: linear-gradient(to bottom, rgb(255, 1, 1), rgb(86, 27, 11));
+  body .solaris .planets .merkurius {
     border-radius: 50%;
+    box-shadow: 0px 0px 10px 1px rgb(94, 93, 81);
+    margin: 3px;
+    background-image: linear-gradient(to bottom, grey, white);
+    width: 10px;
+    height: 10px;
+  }
+  body .solaris .planets .venus {
+    border-radius: 50%;
+    box-shadow: 0px 0px 10px 1px rgb(94, 93, 81);
+    margin: 3px;
+    background-image: linear-gradient(to bottom, white, yellow);
+    width: 20px;
+    height: 20px;
+  }
+  body .solaris .planets .earth {
+    border-radius: 50%;
+    box-shadow: 0px 0px 10px 1px rgb(94, 93, 81);
+    margin: 3px;
+    background-image: linear-gradient(to bottom, rgb(51, 73, 241), rgb(9, 109, 1), blue);
+    width: 30px;
+    height: 30px;
+  }
+  body .solaris .planets .mars {
+    border-radius: 50%;
+    box-shadow: 0px 0px 10px 1px rgb(94, 93, 81);
+    margin: 3px;
+    background-color: brown;
+    width: 35px;
+    height: 35px;
+  }
+  body .solaris .planets .jupiter {
+    border-radius: 50%;
+    box-shadow: 0px 0px 10px 1px rgb(94, 93, 81);
+    margin: 3px;
+    background-image: linear-gradient(to bottom, rgb(97, 57, 20), rgb(212, 232, 123), rgb(162, 65, 52));
     width: 60px;
     height: 60px;
-    margin-top: 10px;
   }
-  body .planets .planet .planetWithRing .planet3 {
+  body .solaris .planets .planetWithRing1 .saturnus {
+    border-radius: 50%;
+    box-shadow: 0px 0px 10px 1px rgb(94, 93, 81);
+    margin: 3px;
     position: relative;
     background-image: linear-gradient(180deg, rgb(176, 193, 54), rgb(181, 145, 135));
-    border-radius: 50%;
-    width: 90px;
-    height: 90px;
+    width: 50px;
+    height: 50px;
   }
-  body .planets .planet .planetWithRing .planet3ring {
+  body .solaris .planets .planetWithRing1 .saturnusRing {
     position: absolute;
-    top: 200px;
-    left: 80px;
+    top: 173px;
+    left: 177px;
     background-color: rgba(151, 142, 111, 0.612);
     border-radius: 50%;
-    width: 200px;
-    height: 10px;
+    width: 95px;
+    height: 5px;
     transform: rotate(150deg);
   }
-  body .planets .planet .planet4 {
-    width: 70px;
-    height: 70px;
+  body .solaris .planets .uranus {
     border-radius: 50%;
-    background-image: linear-gradient(to bottom, sandybrown, black);
-    padding: 0px 20px 0px 0px;
+    box-shadow: 0px 0px 10px 1px rgb(94, 93, 81);
+    margin: 3px;
+    background-image: linear-gradient(to bottom, rgb(42, 35, 171), rgb(250, 250, 247));
+    width: 40px;
+    height: 40px;
+  }
+  body .solaris .planets .planetWithRing2 .neptunes {
+    border-radius: 50%;
+    box-shadow: 0px 0px 10px 1px rgb(94, 93, 81);
+    margin: 3px;
+    position: relative;
+    background-image: linear-gradient(180deg, rgb(54, 86, 193), rgb(46, 24, 132));
+    width: 45px;
+    height: 45px;
+    margin-right: 15px;
+  }
+  body .solaris .planets .planetWithRing2 .neptunesRing {
+    position: absolute;
+    top: 173px;
+    left: 285px;
+    background-color: rgba(151, 142, 111, 0.612);
+    border-radius: 50%;
+    width: 80px;
+    height: 5px;
+    transform: rotate(210deg);
   }
   body main {
     display: flex;
@@ -78,26 +134,20 @@
     width: 100%;
     justify-content: center;
     align-items: center;
-    padding: 20px;
   }
-  body main .h1 {
+  body main .section1h1 {
     text-align: center;
     align-items: center;
-    justify-content: center;
-    color: white;
-    font-family: "ubuntu", sans-serif;
-    font-size: xx-large;
-  }
-  body main .h2 {
-    text-align: center;
-    align-items: center;
-    color: rgb(230, 201, 13);
+    color: rgb(235, 194, 29);
     font-family: "genos", sans-serif;
+    font-weight: 300;
     font-size: 70px;
-    margin-top: -20px;
   }
   body main .searchbar {
-    margin-top: 20px;
+    position: relative;
+    text-align: center;
+    align-items: center;
+    margin-top: 10px;
     width: 280px;
     height: 60px;
     background-color: rgba(240, 248, 255, 0.849);
@@ -108,6 +158,16 @@
     font-weight: 700;
     color: rgba(255, 255, 255, 0.723);
   }
+  body main .button {
+    position: absolute;
+    width: 40px;
+    height: 35px;
+    background-color: rgb(187, 186, 186);
+    border: none;
+    border-radius: 35px;
+    right: 55px;
+    top: 315px;
+  }
   body footer {
     display: flex;
     flex-direction: column;
@@ -115,7 +175,7 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    margin-top: 50px;
+    margin-top: 150px;
     padding-bottom: 10px;
   }
   body footer .copyW {
