@@ -19,6 +19,7 @@
 </head>
 
 <body id="body">
+     <!--Making a starsky-->
 <!-- Making a header that's going to include all the planets in Solaris
 trying to make them have both class and id name as the planets names 
 to make it more understandeble. -->
@@ -63,31 +64,49 @@ to make it more understandeble. -->
             <h1 class="section1h1" id="h1">Solaris</h1>
     
             <input id="searchbar" class="searchbar" type="text" placeholder="Search planet">
-            <button id="button" class="button">🔄</button>
+            <button id="button" class="button">Enter</button>
         </section>
 
         <section class="popUp" id="popUp">
+
             <h1 class="Name" id="Name"></h1>
             <h2 class="latinName" id="latinName"></h2>
 
             <article class="information" id="information">
 
-                <h3 class="type" id="type"></h3>
-                <p></p>
+                <section class="sectionSix">
+                    <h3 class="facts">Allmän Fakta</h3>
+                    <p class="factsOf" id="facts1"></p>
+                    <p class="factsOf" id="facts2"></p>
+                    <p class="factsOf" id="facts3"></p>
+                </section>
 
-                <h3 class="circumference" id="circumference"></h3>
+                <section class="sectionOne">
+                    <h3 class="type">Type</h3>
+                    <p class="typeOf" id="type"></p>
+                </section>
+                
+                <section class="sectionTwo">
+                    <h3 class="circumference"> Omkrets: </h3>
+                    <p class="circumOf" id="circumference"></p>
+                </section>
+                
+                <section class="sectionThree">
+                    <h3 class="distanceSun">Distans från solen</h3>
+                    <p class="distOf" id="distanceSun"></p>
+                </section>
 
-                <h3 class="distanceSun" id="distanceSun"></h3>
-                <p></p>
-
-                <h3 class="facts" id="facts"></h3>
-                <p></p>
-
-                <h3 class="minTemp, maxTemp" id="minTemp, maxTemp"></h3>
-                <p></p>
-
-                <h3 class="moons" id="moons"></h3>
-                <p></p>
+                    <section class="sectionFour">
+                        <h3 class="temperature">Temperatur</h3>
+                        <p class="tempOf" id="maxTemp"></p>
+                        <p class="tempOf" id="minTemp"></p>
+                    </section>
+                
+                    <section class="sectionFive">
+                        <h3 class="moons">Månar</h3>
+                        <p class="moonsOf" id="moons"></p>
+                    </section>
+                
 
             </article>
             
@@ -106,13 +125,6 @@ to make it more understandeble. -->
 
         <p id="copyW" class="copyW">copywright: Sara Johnson Lundén</p>
     </footer>
-
-
-    
-
-    
-
-
 
     <script src="scriptSolaris.js"></script>
 </body>

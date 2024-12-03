@@ -11,6 +11,7 @@
     background-image: linear-gradient(to bottom, rgb(32, 49, 127), rgb(22, 22, 52), rgb(3, 0, 14));
     width: 100%;
     height: 100vh;
+    overflow: hidden;
   }
   body .solaris {
     display: flex;
@@ -33,7 +34,7 @@
     border-radius: 50%;
     box-shadow: 1px 1px 50px 2px rgba(255, 68, 0, 0.692);
   }
-  body .solaris .planets {
+  body .planets {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -41,7 +42,7 @@
     width: 100%;
     padding: 2px;
   }
-  body .solaris .planets .merkurius {
+  body .planets .merkurius {
     border-radius: 50%;
     box-shadow: 0px 0px 10px 1px rgb(94, 93, 81);
     margin: 3px;
@@ -49,7 +50,7 @@
     width: 10px;
     height: 10px;
   }
-  body .solaris .planets .venus {
+  body .planets .venus {
     border-radius: 50%;
     box-shadow: 0px 0px 10px 1px rgb(94, 93, 81);
     margin: 3px;
@@ -57,7 +58,7 @@
     width: 20px;
     height: 20px;
   }
-  body .solaris .planets .earth {
+  body .planets .earth {
     border-radius: 50%;
     box-shadow: 0px 0px 10px 1px rgb(94, 93, 81);
     margin: 3px;
@@ -65,7 +66,7 @@
     width: 30px;
     height: 30px;
   }
-  body .solaris .planets .mars {
+  body .planets .mars {
     border-radius: 50%;
     box-shadow: 0px 0px 10px 1px rgb(94, 93, 81);
     margin: 3px;
@@ -73,7 +74,7 @@
     width: 35px;
     height: 35px;
   }
-  body .solaris .planets .jupiter {
+  body .planets .jupiter {
     border-radius: 50%;
     box-shadow: 0px 0px 10px 1px rgb(94, 93, 81);
     margin: 3px;
@@ -81,7 +82,7 @@
     width: 60px;
     height: 60px;
   }
-  body .solaris .planets .planetWithRing1 .saturnus {
+  body .planets .planetWithRing1 .saturnus {
     border-radius: 50%;
     box-shadow: 0px 0px 10px 1px rgb(94, 93, 81);
     margin: 3px;
@@ -90,7 +91,7 @@
     width: 50px;
     height: 50px;
   }
-  body .solaris .planets .planetWithRing1 .saturnusRing {
+  body .planets .planetWithRing1 .saturnusRing {
     position: absolute;
     top: 173px;
     left: 177px;
@@ -100,7 +101,7 @@
     height: 5px;
     transform: rotate(150deg);
   }
-  body .solaris .planets .uranus {
+  body .planets .uranus {
     border-radius: 50%;
     box-shadow: 0px 0px 10px 1px rgb(94, 93, 81);
     margin: 3px;
@@ -108,7 +109,7 @@
     width: 40px;
     height: 40px;
   }
-  body .solaris .planets .planetWithRing2 .neptunes {
+  body .planets .planetWithRing2 .neptunes {
     border-radius: 50%;
     box-shadow: 0px 0px 10px 1px rgb(94, 93, 81);
     margin: 3px;
@@ -118,7 +119,7 @@
     height: 45px;
     margin-right: 15px;
   }
-  body .solaris .planets .planetWithRing2 .neptunesRing {
+  body .planets .planetWithRing2 .neptunesRing {
     position: absolute;
     top: 173px;
     left: 285px;
@@ -128,14 +129,14 @@
     height: 5px;
     transform: rotate(210deg);
   }
-  body main {
+  main {
     display: flex;
     flex-direction: column;
     width: 100%;
     justify-content: center;
     align-items: center;
   }
-  body main .section1h1 {
+  main .section1h1 {
     text-align: center;
     align-items: center;
     color: rgb(235, 194, 29);
@@ -143,7 +144,7 @@
     font-weight: 300;
     font-size: 70px;
   }
-  body main .searchbar {
+  main .searchbar {
     position: relative;
     text-align: center;
     align-items: center;
@@ -158,9 +159,9 @@
     font-weight: 700;
     color: rgba(255, 255, 255, 0.723);
   }
-  body main .button {
+  main .button {
     position: absolute;
-    width: 40px;
+    width: 45px;
     height: 35px;
     background-color: rgb(187, 186, 186);
     border: none;
@@ -168,27 +169,167 @@
     right: 55px;
     top: 315px;
   }
-  body footer {
+  main .popUp {
+    display: flex;
+    flex-direction: column;
+    display: none;
+    position: fixed;
+    margin-top: 100px;
+    width: 95%;
+    height: 95vh;
+    background-image: linear-gradient(180deg, rgba(21, 25, 37, 0.938), rgba(2, 2, 54, 0.952), rgba(12, 1, 26, 0.945));
+    color: rgb(255, 237, 134);
+    box-shadow: 1px 1px 10px 6px rgba(223, 193, 117, 0.568);
+    border-radius: 5px;
+    padding: 5px;
+  }
+  main .popUp .Name {
+    font-family: "genos", sans-serif;
+    font-weight: 400;
+    font-size: 50px;
+    margin-left: 5px;
+    padding: 0;
+  }
+  main .popUp .latinName {
+    font-family: "genos", sans-serif;
+    font-size: x-large;
+    font-weight: 300;
+    margin: -10px 0px 5px 20px;
+    padding: 0;
+  }
+  main .popUp .information {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 80%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    font-family: "ubuntu", sans-serif;
+    font-weight: 300;
+    font-size: medium;
+    padding: 10px;
+  }
+  main .popUp .information .sectionOne {
+    width: 150px;
+    padding: 10px;
+    margin-bottom: 10px;
+    justify-content: center;
+    align-items: center;
+  }
+  main .popUp .information .sectionOne .type {
+    width: 30vw;
+    font-weight: 200;
+    text-decoration: underline;
+  }
+  main .popUp .information .sectionOne .type .typOf {
+    font-weight: 100;
+    font-size: x-large;
+    padding: 10px;
+  }
+  main .popUp .information .sectionTwo {
+    width: 150px;
+    padding: 10px;
+    margin-bottom: 10px;
+    justify-content: center;
+    align-items: center;
+  }
+  main .popUp .information .sectionTwo .circumference {
+    width: 30vw;
+    font-weight: 200;
+    text-decoration: underline;
+  }
+  main .popUp .information .sectionTwo .circumference .circumOf {
+    font-weight: 100;
+    font-size: x-large;
+    padding: 10px;
+  }
+  main .popUp .information .sectionThree {
+    width: 150px;
+    padding: 10px;
+    margin-bottom: 10px;
+    justify-content: center;
+    align-items: center;
+  }
+  main .popUp .information .sectionThree .distanceSun {
+    width: 30vw;
+    font-weight: 200;
+    text-decoration: underline;
+  }
+  main .popUp .information .sectionThree .distanceSun .distOf {
+    font-weight: 100;
+    font-size: x-large;
+    padding: 10px;
+  }
+  main .popUp .information .sectionFour {
+    width: 150px;
+    padding: 10px;
+    margin-bottom: 10px;
+    justify-content: center;
+    align-items: center;
+  }
+  main .popUp .information .sectionFour .temperature {
+    width: 30vw;
+    font-weight: 200;
+    text-decoration: underline;
+  }
+  main .popUp .information .sectionFour .temperature .tempOf {
+    font-weight: 100;
+    font-size: x-large;
+    padding: 10px;
+  }
+  main .popUp .information .sectionFive {
+    width: 150px;
+    padding: 10px;
+    margin-bottom: 10px;
+    justify-content: center;
+    align-items: center;
+  }
+  main .popUp .information .sectionFive .moons {
+    width: 30vw;
+    font-weight: 200;
+    text-decoration: underline;
+  }
+  main .popUp .information .sectionFive .moons .moonsOf {
+    font-weight: 100;
+    font-size: x-large;
+    padding: 10px;
+  }
+  main .popUp .information .sectionSix {
+    width: 100%;
+    font-size: small;
+  }
+  main .popUp .information .sectionSix .facts {
+    width: 30vw;
+    font-weight: 200;
+    text-decoration: underline;
+    margin-bottom: 5px;
+  }
+  main .popUp .information .sectionSix .facts .factsOf {
+    font-weight: 100;
+    font-size: x-large;
+    padding: 10px;
+  }
+  footer {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     justify-content: center;
     align-items: center;
     width: 100%;
-    margin-top: 150px;
+    margin-top: 180px;
     padding-bottom: 10px;
   }
-  body footer .copyW {
+  footer .copyW {
     color: rgba(255, 255, 255, 0.668);
     padding: 5px;
     margin: 5px;
   }
-  body footer .links {
+  footer .links {
     display: flex;
     flex-direction: row;
     justify-content: center;
   }
-  body footer .links .instagram {
+  footer .links .instagram {
     width: 30px;
     height: 30px;
     border-radius: 50%;
@@ -200,7 +341,7 @@
     text-decoration: none;
     margin: 0px 10px 0px 0px;
   }
-  body footer .links .github {
+  footer .links .github {
     width: 30px;
     height: 30px;
     border-radius: 50%;
@@ -212,7 +353,7 @@
     text-decoration: none;
     margin: 0px 10px 0px 0px;
   }
-  body footer .links .mejl {
+  footer .links .mejl {
     width: 30px;
     height: 30px;
     border-radius: 50%;
