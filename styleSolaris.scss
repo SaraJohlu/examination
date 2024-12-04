@@ -1,8 +1,3 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
 $color1: rgb(235, 194, 29);
 $color2: black;
@@ -10,11 +5,15 @@ $color2: black;
 @mixin layout1 {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 @mixin layout2 {
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 @mixin links {
@@ -32,8 +31,8 @@ $color2: black;
 
 @mixin planetLayout {
   border-radius: 50%;
-  box-shadow: 0px 0px 10px 1px rgb(94, 93, 81);
-  margin: 3px;
+  box-shadow: inset 2px 5px 10px rgb(255, 255, 255);
+  margin: 15px;
 }
 
 @mixin rubriker {
@@ -43,7 +42,7 @@ $color2: black;
 }
 
 @mixin sectionLayout {
-  width: 150px;
+  width: 200px;
   padding: 10px;
   margin-bottom: 10px;
   justify-content: center;
@@ -56,58 +55,64 @@ $color2: black;
   padding: 10px;
 }
 
-@media (max-width: 670px) {
-  body {
-    @include layout1();
-    position: relative;
-    overflow: hidden;
-    background-image: linear-gradient(
-      to bottom,
-      rgb(32, 49, 127),
-      rgb(22, 22, 52),
-      rgb(3, 0, 14)
-    );
-    width: 100%;
-    height: 100vh;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    .starsky {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
+@media (max-width: 670px) {
+
+  body {
+    overflow: hidden;
+    width: 100vw;
+    height: 100%;
+
+    .starsky { // making the style for the space with stars
+      width: 100vw;
       height: 100vh;
 
-      
-    .stars {
-      position: absolute;
-      width: 2px;
-      height: 2px;
-      background-color: white;
-      border-radius: 50%;
-      animation: twinkle 5s infinite alternate;
+      @include layout1();
+      overflow: hidden;
+      position: relative;
+      background: linear-gradient(to bottom, rgb(1, 1, 74), black);
+
     }
 
-    @keyframes twinkle {
-      0%,
-      100% {
-        opacity: 0, 2;
+      .starryHeaven {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+      .stars {
+        position: absolute;
+        width: 2px;
+        height: 2px;
+        background-color: white;
+        border-radius: 50%;
+        animation: twinkle 5s infinite alternate;
       }
 
-      50% {
-        opacity: 1; 
+      @keyframes twinkle {
+        0%, 100% {
+          opacity: 0.2;
+        }
+
+        50% {
+          opacity: 1; 
+        }
       }
-    }
     }
 
     .solaris {
       @include layout1();
-      justify-content: center;
-      align-items: center;
       width: 100%;
+      z-index: 0;
 
       .sunny {
         @include layout2();
-        justify-content: center;
         margin-top: -100px;
         margin-bottom: 10px;
 
@@ -115,40 +120,38 @@ $color2: black;
           background-image: linear-gradient(
             to bottom,
             rgb(238, 195, 53),
-            rgb(202, 97, 22)
+            rgb(202, 97, 22),
+            red
           );
-          width: 230px;
-          height: 230px;
+          width: 250px;
+          height: 250px;
           border-radius: 50%;
-          box-shadow: 1px 1px 50px 2px rgba(255, 68, 0, 0.692);
+          box-shadow: 0px 0px 80px 10px rgba(255, 68, 0, 0.692);
         }
       }
     }
 
     .planets {
       @include layout2();
-      justify-content: center;
-      align-items: center;
       width: 100%;
-      padding: 2px;
+      padding: 50px 10px 20px 10px;
 
       .merkurius {
         @include planetLayout();
 
         background-image: linear-gradient(to bottom, grey, white);
 
-        width: 10px;
-        height: 10px;
+        width: 20px;
+        height: 20px;
       }
 
       .venus {
         @include planetLayout();
 
-        background-image: linear-gradient(to bottom, white, yellow);
+        background-image: linear-gradient(to bottom, white, yellow, pink);
 
-        width: 20px;
-        height: 20px;
-        // margin-top: -60px;
+        width: 30px;
+        height: 30px;
       }
 
       .earth {
@@ -161,8 +164,8 @@ $color2: black;
           blue
         );
 
-        width: 30px;
-        height: 30px;
+        width: 40px;
+        height: 40px;
       }
 
       .mars {
@@ -180,11 +183,12 @@ $color2: black;
           to bottom,
           rgb(97, 57, 20),
           rgb(212, 232, 123),
-          rgb(162, 65, 52)
+          rgb(162, 65, 52),
+          rgb(97, 57, 20)
         );
 
-        width: 60px;
-        height: 60px;
+        width: 70px;
+        height: 70px;
       }
 
       .planetWithRing1 {
@@ -198,20 +202,20 @@ $color2: black;
             rgb(181, 145, 135)
           );
 
-          width: 50px;
-          height: 50px;
+          width: 60px;
+          height: 60px;
         }
 
         .saturnusRing {
           position: absolute;
-          top: 173px;
-          left: 177px;
+          top: 260px;
+          left: 382px;
 
-          background-color: rgba(151, 142, 111, 0.612);
+          background-color: rgba(106, 97, 63, 0.675);
           border-radius: 50%;
 
-          width: 95px;
-          height: 5px;
+          width: 100px;
+          height: 7px;
           transform: rotate(150deg);
         }
       }
@@ -240,21 +244,21 @@ $color2: black;
             rgb(46, 24, 132)
           );
 
-          width: 45px;
-          height: 45px;
+          width: 50px;
+          height: 50px;
           margin-right: 15px;
         }
 
         .neptunesRing {
           position: absolute;
-          top: 173px;
-          left: 285px;
+          top: 256px;
+          left: 548px;
 
           background-color: rgba(151, 142, 111, 0.612);
           border-radius: 50%;
 
           width: 80px;
-          height: 5px;
+          height: 7px;
           transform: rotate(210deg);
         }
       }
@@ -266,6 +270,7 @@ $color2: black;
     width: 100%;
     justify-content: center;
     align-items: center;
+    z-index: 0;
 
     .section1h1 {
       text-align: center;
@@ -273,86 +278,97 @@ $color2: black;
       color: $color1;
       font-family: "genos", sans-serif;
       font-weight: 300;
-      font-size: 70px;
+      font-size: 100px;
     }
 
     .searchbar {
-      position: relative;
       text-align: center;
       align-items: center;
       margin-top: 10px;
       width: 280px;
       height: 60px;
-      background-color: rgba(240, 248, 255, 0.849);
+      background-color: rgba(240, 248, 255, 0.79);
       border: none;
       border-radius: 10px;
       text-align: center;
       font-size: large;
       font-weight: 700;
-      color: rgba(255, 255, 255, 0.723);
+      color: rgba(53, 46, 46, 0.908);
+      z-index: 0;
     }
 
     .button {
-      position: absolute;
       width: 45px;
-      height: 35px;
+      height: 45px;
 
-      background-color: rgb(187, 186, 186);
+      background-color: rgba(240, 248, 255, 0.79);
 
       border: none;
-      border-radius: 35px;
-      right: 55px;
-      top: 315px;
+      border-radius: 50%;
+
+      margin-left:-55px;
     }
 
     .popUp {
       @include layout1();
-      display: none;
-      position: fixed;
+      justify-content: space-between;
+      align-items: center;
+      // display: none;
+      position: absolute;
 
-      margin-top: 100px;
-      width: 95%;
-      height: 95vh;
+
+      width: 90%;
+      height: 90vh;
 
       background-image: linear-gradient(
         180deg,
-        rgba(21, 25, 37, 0.938),
-        rgba(2, 2, 54, 0.952),
-        rgba(12, 1, 26, 0.945)
+        rgba(21, 25, 37, 0.826),
+        rgba(2, 2, 54, 0.841),
+        rgba(12, 1, 26, 0.79)
       );
 
       color: rgb(255, 237, 134);
       box-shadow: 1px 1px 10px 6px rgba(223, 193, 117, 0.568);
-      border-radius: 5px;
+      border-radius: 10px;
 
       padding: 5px;
+
+      .btnClose {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        margin: 15px 50px 0px 500px;
+        background:  rgb(255, 237, 134);
+      }
 
       .Name {
         font-family: "genos", sans-serif;
         font-weight: 400;
-        font-size: 50px;
+        font-size: 60px;
 
-        margin-left: 5px;
+        margin-left: 50px;
         padding: 0;
       }
 
       .latinName {
         font-family: "genos", sans-serif;
-        font-size: x-large;
+        font-size: xx-large;
         font-weight: 300;
-        margin: -10px 0px 5px 20px;
+        margin: -5px 0px 5px 60px;
         padding: 0;
       }
 
       .information {
         @include layout2();
-        width: 100%;
-        height: 80%;
+        width: 98%;
+        height: 75%;
         flex-wrap: wrap;
         justify-content: space-between;
         font-family: "ubuntu", sans-serif;
         font-weight: 300;
         font-size: medium;
+        background-color: black;
+        border-radius: 10px;
 
         padding: 10px;
 
@@ -418,7 +434,7 @@ $color2: black;
 
         .sectionSix {
           width: 100%;
-          font-size: small;
+          font-size: medium;
 
           .facts {
             @include rubriker();
@@ -439,10 +455,13 @@ $color2: black;
     justify-content: center;
     align-items: center;
     width: 100%;
-    margin-top: 180px;
+    margin-top: 200px;
+    margin-left: 15px;
     padding-bottom: 10px;
 
     .copyW {
+      justify-content: center;
+      align-items: center;
       color: rgba(255, 255, 255, 0.668);
       padding: 5px;
       margin: 5px;
@@ -451,6 +470,8 @@ $color2: black;
     .links {
       @include layout2();
       justify-content: center;
+      align-items: center;
+
       .instagram {
         @include links();
       }

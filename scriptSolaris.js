@@ -112,19 +112,20 @@ function fetchData() {
     });
 
     starryStars();
-      function starryStars() {
-        const stars = document.getElementById("starsky");
-        const numberStars = 1000;
-    
-        for(i=0; i < numberStars; i++){
-          const starry = document.createElement("div");
-          starry.classList.add("star");
-          starry.style.top = `${Math.random() *100}vh`;
-          starry.style.left = `${Math.random() *100}vw`;
-          starry.style.animationDuration = `${Math.random() *5+2}s`;
-          starry.style.animationDelay = `${Math.random() *2}s`;
 
-          stars.appendChild(starry);
+      function starryStars() {
+        const starContain = document.querySelector(".starryHeaven");
+        const numberStars = 200;
+    
+        for(let i=0; i < numberStars; i++){
+          const stars = document.createElement("div");
+          stars.classList.add("stars");
+          stars.style.top = `${Math.random() *100}vh`;
+          stars.style.left = `${Math.random() *100}vw`;
+          stars.style.animationDuration = `${Math.random() *5+2}s`;
+          stars.style.animationDelay = `${Math.random() *2}s`;
+
+          starContain.appendChild(stars);
         };
     
     };
