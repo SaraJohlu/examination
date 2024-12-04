@@ -2,7 +2,7 @@
 const body = document.getElementById("body");
 const planet = document.getElementById("searchbar");
 
-
+fetchData();
 
 // creating a function for the data being fetched with POST from the API, making it possible for users to send informaton and get back data.
 function fetchData() {
@@ -74,147 +74,68 @@ function fetchData() {
 
       function userInput() {
         // A function for the user input to fetch the right data for every planet
-        const planet = document.getElementById("searchbar").value.toLowerCase();
+        const searchbar = document.getElementById("searchbar").value.toLowerCase();
+        const popUp = document.getElementById("popUp");
+        const planet = data.bodies.find(body => body.name.toLowerCase() === searchbar); // takes the users input, search and compare with the API data
 
-        if (planet === "solen") {
-          //When user writes solen/sun and press search, then the program fetch the data about the sun
-          Name.textContent = data.bodies[0].name;
-          latinName.textContent = data.bodies[0].latinName;
-          type.textContent = data.bodies[0].type;
-          distanceSun.textContent = `${data.bodies[0].distanceSun} km`;
-          circumference.textContent = `${data.bodies[0].circumference} km `;
-          maxTemp.textContent = `Dagtid: ${data.bodies[0].temp.day} celsius`;
-          minTemp.textContent = `Natt: ${data.bodies[0].temp.night} celsius`;
-          moons.textContent = data.bodies[0].moons.length;
-          facts1.textContent = data.bodies[0].desc;
-          facts2.textContent = `Jorddygn runt solen: ${data.bodies[0].orbitalPeriod}`;
-          facts3.textContent = `Jorddygn runt sin egen axel ${data.bodies[0].rotation}`;
-        } else if (planet === "merkurius") {
-          //When user writes merkurius and press search, then the program fetch the data about the merkurius
-          Name.textContent = data.bodies[1].name;
-          latinName.textContent = data.bodies[1].latinName;
-          type.textContent = data.bodies[1].type;
-          distanceSun.textContent = `${data.bodies[1].distanceSun} km`;
-          circumference.textContent = `${data.bodies[1].circumference} km `;
-          maxTemp.textContent = `Dagtid: ${data.bodies[1].temp.day} celsius`;
-          minTemp.textContent = `Natt: ${data.bodies[1].temp.night} celsius`;
-          moons.textContent = data.bodies[1].moons.length;
-          facts1.textContent = data.bodies[1].desc;
-          facts2.textContent = `Jorddygn runt solen: ${data.bodies[1].orbitalPeriod}`;
-          facts3.textContent = `Jorddygn runt sin egen axel ${data.bodies[1].rotation}`;
-        } else if (planet === "venus") {
-          //When user writes venus and press search, then the program fetch the data about the venus
-          Name.textContent = data.bodies[2].name;
-          latinName.textContent = data.bodies[2].latinName;
-          type.textContent = data.bodies[2].type;
-          distanceSun.textContent = `${data.bodies[2].distanceSun} km`;
-          circumference.textContent = `${data.bodies[2].circumference} km `;
-          maxTemp.textContent = `Dagtid: ${data.bodies[2].temp.day} celsius`;
-          minTemp.textContent = `Natt: ${data.bodies[2].temp.night} celsius`;
-          moons.textContent = data.bodies[2].moons.length;
-          facts1.textContent = data.bodies[2].desc;
-          facts2.textContent = `Jorddygn runt solen: ${data.bodies[2].orbitalPeriod}`;
-          facts3.textContent = `Jorddygn runt sin egen axel ${data.bodies[2].rotation}`;
-        } else if (planet === "jorden") {
-          //When user writes jorden/earth and press search, then the program fetch the data about the jorden/earth
-          Name.textContent = data.bodies[3].name;
-          latinName.textContent = data.bodies[3].latinName;
-          type.textContent = data.bodies[3].type;
-          distanceSun.textContent = `${data.bodies[3].distanceSun} km`;
-          circumference.textContent = `${data.bodies[3].circumference} km `;
-          maxTemp.textContent = `Dagtid: ${data.bodies[3].temp.day} celsius`;
-          minTemp.textContent = `Natt: ${data.bodies[3].temp.night} celsius`;
-          moons.textContent = data.bodies[3].moons.length;
-          facts1.textContent = data.bodies[3].desc;
-          facts2.textContent = `Jorddygn runt solen: ${data.bodies[3].orbitalPeriod}`;
-          facts3.textContent = `Jorddygn runt sin egen axel ${data.bodies[3].rotation}`;
-        } else if (planet === "mars") {
-          Name.textContent = data.bodies[4].name;
-          latinName.textContent = data.bodies[4].latinName;
-          type.textContent = data.bodies[4].type;
-          distanceSun.textContent = `${data.bodies[4].distanceSun} km`;
-          circumference.textContent = `${data.bodies[4].circumference} km `;
-          maxTemp.textContent = `Dagtid: ${data.bodies[4].temp.day} celsius`;
-          minTemp.textContent = `Natt: ${data.bodies[4].temp.night} celsius`;
-          moons.textContent = data.bodies[4].moons.length;
-          facts1.textContent = data.bodies[4].desc;
-          facts2.textContent = `Jorddygn runt solen: ${data.bodies[4].orbitalPeriod}`;
-          facts3.textContent = `Jorddygn runt sin egen axel ${data.bodies[4].rotation}`;
-        } else if (planet === "jupiter") {
-          Name.textContent = data.bodies[5].name;
-          latinName.textContent = data.bodies[5].latinName;
-          type.textContent = data.bodies[5].type;
-          distanceSun.textContent = `${data.bodies[5].distanceSun} km`;
-          circumference.textContent = `${data.bodies[5].circumference} km `;
-          maxTemp.textContent = `Dagtid: ${data.bodies[5].temp.day} celsius`;
-          minTemp.textContent = `Natt: ${data.bodies[5].temp.night} celsius`;
-          moons.textContent = data.bodies[5].moons.length;
-          facts1.textContent = data.bodies[5].desc;
-          facts2.textContent = `Jorddygn runt solen: ${data.bodies[5].orbitalPeriod}`;
-          facts3.textContent = `Jorddygn runt sin egen axel ${data.bodies[5].rotation}`;
-        } else if (planet === "saturnus") {
-          Name.textContent = data.bodies[6].name;
-          latinName.textContent = data.bodies[6].latinName;
-          type.textContent = data.bodies[6].type;
-          distanceSun.textContent = `${data.bodies[6].distanceSun} km`;
-          circumference.textContent = `${data.bodies[6].circumference} km `;
-          maxTemp.textContent = `Dagtid: ${data.bodies[6].temp.day} celsius`;
-          minTemp.textContent = `Natt: ${data.bodies[6].temp.night} celsius`;
-          moons.textContent = data.bodies[6].moons.length;
-          facts1.textContent = data.bodies[6].desc;
-          facts2.textContent = `Jorddygn runt solen: ${data.bodies[6].orbitalPeriod}`;
-          facts3.textContent = `Jorddygn runt sin egen axel ${data.bodies[6].rotation}`;
-        } else if (planet === "uranus") {
-          Name.textContent = data.bodies[7].name;
-          latinName.textContent = data.bodies[7].latinName;
-          type.textContent = data.bodies[7].type;
-          distanceSun.textContent = `${data.bodies[7].distanceSun} km`;
-          circumference.textContent = `${data.bodies[7].circumference} km `;
-          maxTemp.textContent = `Dagtid: ${data.bodies[7].temp.day} celsius`;
-          minTemp.textContent = `Natt: ${data.bodies[7].temp.night} celsius`;
-          moons.textContent = data.bodies[7].moons.length;
-          facts1.textContent = data.bodies[7].desc;
-          facts2.textContent = `Jorddygn runt solen: ${data.bodies[7].orbitalPeriod}`;
-          facts3.textContent = `Jorddygn runt sin egen axel ${data.bodies[7].rotation}`;
-        } else if (planet === "neptunus") {
-          Name.textContent = data.bodies[8].name;
-          latinName.textContent = data.bodies[8].latinName;
-          type.textContent = data.bodies[8].type;
-          distanceSun.textContent = `${data.bodies[8].distanceSun} km`;
-          circumference.textContent = `${data.bodies[8].circumference} km `;
-          maxTemp.textContent = `Dagtid: ${data.bodies[8].temp.day} celsius`;
-          minTemp.textContent = `Natt: ${data.bodies[8].temp.night} celsius`;
-          moons.textContent = data.bodies[8].moons.length;
-          facts1.textContent = data.bodies[8].desc;
-          facts2.textContent = `Jorddygn runt solen: ${data.bodies[8].orbitalPeriod}`;
-          facts3.textContent = `Jorddygn runt sin egen axel ${data.bodies[8].rotation}`;
-        } else if (planet === "") {
-          alert(
-            "Sök efter en planet i solsystemet solaris för att få information om den"
-          );
-        } else {
+        if(planet){  //User writes in the planet it wants to search for
+          Name.textContent = `${planet.name}`;
+          latinName.textContent = `${planet.latinName}`;
+          type.textContent = `${planet.type}`;
+          distanceSun.textContent = `${planet.distance} km`;
+          circumference.textContent = `${planet.circumference} km `;
+          maxTemp.textContent = `Dagtid: ${planet.temp.day} °C`;
+          minTemp.textContent = `Natt: ${planet.temp.night} °C`;
+          moons.textContent = `${planet.moons.length}`;
+          facts1.textContent = `${planet.desc}`;
+          facts2.textContent = `Jorddygn runt solen: ${planet.orbitalPeriod}`;
+          facts3.textContent = `Jorddygn runt sin egen axel ${planet.rotation}`;
+  
+          popUp.style.display = "block";
+
+        }
+       
+         else {
           alert("Inte en planet eller stjärna, testa igen");
         }
-
-        function popUpscreen(){
-            const popUp = document.getElementById("popUp");
-            if(popUp === "none"){
-                popUp === "block"
-            }
-            else{
-                popUp === "none"
-            }
-      };
-
  
     };
 
     const button = document.getElementById("button");
     button.addEventListener("click", userInput);
+
+    const closeBtn = document.getElementById("btnClose");
+    closeBtn.addEventListener("click", () => {
+      if (popUp.style.display = "block") {
+        popUp.style.display = "none"
+      }
+    });
+
+    starryStars();
+      function starryStars() {
+        const stars = document.getElementById("starsky");
+        const numberStars = 1000;
     
+        for(i=0; i < numberStars; i++){
+          const starry = document.createElement("div");
+          starry.classList.add("star");
+          starry.style.top = `${Math.random() *100}vh`;
+          starry.style.left = `${Math.random() *100}vw`;
+          starry.style.animationDuration = `${Math.random() *5+2}s`;
+          starry.style.animationDelay = `${Math.random() *2}s`;
+
+          stars.appendChild(starry);
+        };
+    
+    };
+
+
     })
 
     .catch((error) => {
       console.error("Error", error);
     });
 }
+
+
+

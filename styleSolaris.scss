@@ -59,6 +59,8 @@ $color2: black;
 @media (max-width: 670px) {
   body {
     @include layout1();
+    position: relative;
+    overflow: hidden;
     background-image: linear-gradient(
       to bottom,
       rgb(32, 49, 127),
@@ -67,39 +69,35 @@ $color2: black;
     );
     width: 100%;
     height: 100vh;
-    overflow: hidden;
 
-    // .starsky {
-    //   position: absolute;
-    //   top: 0;
-    //   left: 0;
-    //   width: 100%;
-    //   height: 100%;
-    //   // background-color: rgb(0, 0, 0);
-    //   z-index: -1;
-    // }
+    .starsky {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
 
-    // .stars {
-    //   position: absolute;
-    //   width: 2px;
-    //   height: 2px;
-    //   background-color: white;
-    //   border-radius: 50%;
-    //   opacity: 0.8;
-    //   animation: twinkle 2s infinite alternate;
-    // }
+      
+    .stars {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background-color: white;
+      border-radius: 50%;
+      animation: twinkle 5s infinite alternate;
+    }
 
-    // @keyframes twinkle {
-    //   0% {
-    //     opacity: 0.8;
-    //   }
-    //   50% {
-    //     opacity: 0.5;
-    //   }
-    //   100% {
-    //     opacity: 0.8;
-    //   }
-    // }
+    @keyframes twinkle {
+      0%,
+      100% {
+        opacity: 0, 2;
+      }
+
+      50% {
+        opacity: 1; 
+      }
+    }
+    }
 
     .solaris {
       @include layout1();
@@ -355,7 +353,7 @@ $color2: black;
         font-family: "ubuntu", sans-serif;
         font-weight: 300;
         font-size: medium;
-        
+
         padding: 10px;
 
         .sectionOne {
@@ -419,8 +417,8 @@ $color2: black;
         }
 
         .sectionSix {
-         width: 100%;
-         font-size: small;
+          width: 100%;
+          font-size: small;
 
           .facts {
             @include rubriker();
