@@ -60,6 +60,434 @@
   box-sizing: border-box;
 }
 
+@media screen and (min-width: 360px) {
+
+  body {
+    width: 100vw;
+    height: 100%;
+
+    .starsky { // making the style for the space with stars (this is the full site, because of the star sky animation)
+      width: 100vw;
+      height: 100vh;
+    
+      @include layout1();
+      position: relative;
+      background: linear-gradient(to bottom, rgb(1, 1, 74), black);
+
+      .starryHeaven {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+      .stars {
+        position: absolute;
+        width: 2px;
+        height: 2px;
+        background-color: white;
+        border-radius: 50%;
+        animation: twinkle 5s infinite alternate;
+      }
+
+      @keyframes twinkle {
+        0%, 100% {
+          opacity: 0.2;
+        }
+
+        50% {
+          opacity: 1; 
+        }
+      }
+    }
+
+      .solaris {
+      @include layout1();
+      width: 100%;
+      z-index: 0;
+      
+
+      .sunny {
+        @include layout2();
+      
+
+        .sun {
+          background-image: linear-gradient(
+            to bottom,
+            rgb(238, 195, 53),
+            rgb(202, 97, 22),
+            red
+          );
+          width: 250px;
+          height: 250px;
+          border-radius: 50%;
+          box-shadow: 0px 0px 80px 10px rgba(255, 68, 0, 0.692);
+        }
+      }
+    }
+
+      .planets {
+      @include layout2();
+      width: 100%;
+      padding: 20px 1px 20px 1px;
+
+      .merkurius {
+        @include planetLayout();
+        margin: 4px;
+
+        background-image: linear-gradient(to bottom, grey, white);
+
+        width: 15px;
+        height: 15px;
+      
+      }
+
+      .venus {
+        @include planetLayout();
+        margin: 4px;
+
+        background-image: linear-gradient(to bottom, white, yellow, pink);
+
+        width: 25px;
+        height: 25px;
+      }
+
+      .earth {
+        @include planetLayout();
+        margin: 4px;
+
+        background-image: linear-gradient(
+          to bottom,
+          rgb(51, 73, 241),
+          rgb(9, 109, 1),
+          blue
+        );
+
+        width: 30px;
+        height: 30px;
+      }
+
+      .mars {
+        @include planetLayout();
+        margin: 4px;
+        background-color: brown;
+
+        width: 35px;
+        height: 35px;
+      }
+
+      .jupiter {
+        @include planetLayout();
+        margin: 4px;
+
+        background-image: linear-gradient(
+          to bottom,
+          rgb(97, 57, 20),
+          rgb(212, 232, 123),
+          rgb(162, 65, 52),
+          rgb(97, 57, 20)
+        );
+
+        width: 60px;
+        height: 60px;
+      }
+
+      .planetWithRing1 {
+        .saturnus {
+          @include planetLayout();
+          margin: 4px;
+          position: relative;
+
+          background-image: linear-gradient(
+            180deg,
+            rgb(176, 193, 54),
+            rgb(181, 145, 135)
+          );
+
+          width: 50px;
+          height: 50px;
+        }
+
+        .saturnusRing {
+          position: fixed;
+          top: 212px;
+          left: 185px;
+
+          background-color: rgba(106, 97, 63, 0.675);
+          border-radius: 50%;
+
+          width: 100px;
+          height: 7px;
+          transform: rotate(150deg);
+        }
+      }
+
+      .uranus {
+        @include planetLayout();
+        margin: 4px;
+
+        background-image: linear-gradient(
+          to bottom,
+          rgb(42, 35, 171),
+          rgb(250, 250, 247)
+        );
+
+        width: 40px;
+        height: 40px;
+      }
+
+      .planetWithRing2 {
+        .neptunes {
+          @include planetLayout();
+          margin: 4px;
+          position: relative;
+
+          background-image: linear-gradient(
+            180deg,
+            rgb(54, 86, 193),
+            rgb(46, 24, 132)
+          );
+
+          width: 50px;
+          height: 50px;
+        }
+
+        .neptunesRing {
+          position:fixed;
+          top: 212px;
+          left: 300px;
+
+          background-color: rgba(151, 142, 111, 0.612);
+          border-radius: 50%;
+
+          width: 80px;
+          height: 7px;
+          transform: rotate(210deg);
+        }
+      }
+    }
+  
+
+  main {
+    @include layout1();
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    z-index: 0;
+
+    .section1h1 {
+      text-align: center;
+      align-items: center;
+      font-family: "genos", sans-serif;
+      font-weight: 300;
+      font-size: 100px;
+      color: gold;
+    }
+
+    .searchbar {
+      text-align: center;
+      align-items: center;
+      margin-top: 10px;
+      width: 280px;
+      height: 60px;
+      background-color: rgba(240, 248, 255, 0.79);
+      border: none;
+      border-radius: 10px;
+      text-align: center;
+      font-size: large;
+      font-weight: 700;
+      color: rgba(53, 46, 46, 0.908);
+      z-index: 0;
+    }
+
+    .button {
+      width: 45px;
+      height: 45px;
+
+      background-color: rgba(240, 248, 255, 0.79);
+
+      border: none;
+      border-radius: 50%;
+
+      margin-left:-55px;
+    }
+
+    .popUp {
+      @include layout2();
+      // flex-wrap: wrap;
+      align-items: center;
+      display: none;
+      // position: absolute;
+      width: 95%;
+      height: 80vh;
+
+      background-image: linear-gradient(
+        180deg,
+        rgba(21, 25, 37, 0.826),
+        rgba(2, 2, 54, 0.841),
+        rgba(12, 1, 26, 0.79)
+      );
+
+      color: rgb(255, 237, 134);
+      border-radius: 10px;
+
+      padding: 2px;
+      margin-top: 150px;
+
+      .btnClose {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: none;
+        background:  rgba(255, 237, 134, 0.712);
+        margin: 10px 0px 0px 290px;
+      }
+
+      .Name {
+        font-family: "genos", sans-serif;
+        font-weight: 400;
+        font-size: 60px;
+      }
+
+      .latinName {
+        font-family: "genos", sans-serif;
+        font-size: xx-large;
+        font-weight: 300;
+      }
+
+      .information {
+        @include layout2();
+        overflow-y: auto;
+        width: 98%;
+        height: 70vh;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        font-family: "ubuntu", sans-serif;
+        font-weight: 300;
+        font-size: medium;
+        background: linear-gradient(to bottom, rgb(29, 28, 28), rgba(0, 0, 0, 0.904)) ;
+        border-radius: 2px;
+
+        padding: 10px;
+        margin: 5px;
+
+        .sectionOne {
+          @include sectionLayout();
+
+
+          .type {
+            @include rubriker();
+
+            .typOf {
+              @include of();
+            }
+          }
+        }
+
+        .sectionTwo {
+          @include sectionLayout();
+
+          .circumference {
+            @include rubriker();
+
+            .circumOf {
+              @include of();
+            }
+          }
+        }
+
+        .sectionThree {
+          @include sectionLayout();
+
+          .distanceSun {
+            @include rubriker();
+
+            .distOf {
+              @include of();
+            }
+          }
+        }
+
+        .sectionFour {
+          @include sectionLayout();
+
+          .temperature {
+            @include rubriker();
+
+            .tempOf {
+              @include of();
+            }
+          }
+        }
+
+        .sectionFive {
+          @include sectionLayout();
+
+          .moons {
+            @include rubriker();
+
+            .moonsOf {
+              @include of();
+            }
+          }
+        }
+
+        .sectionSix {
+          width: 100%;
+          font-size: medium;
+
+          .facts {
+            @include rubriker();
+            margin-bottom: 2px;
+
+            .factsOf {
+              @include of();
+            }
+          }
+        }
+      }
+    }
+  }
+
+  footer {
+    @include layout1();
+    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 130px;
+    padding-bottom: 10px;
+
+    .copyW {
+      justify-content: center;
+      align-items: center;
+      color: rgba(255, 255, 255, 0.668);
+      padding: 5px;
+      margin: 5px;
+    }
+
+    .links {
+      @include layout2();
+      justify-content: center;
+      align-items: center;
+
+      .instagram {
+        @include links();
+      }
+
+      .github {
+        @include links();
+      }
+
+      .mejl {
+        @include links();
+      }
+    }
+  }
+}
+}
+}
+
 @media screen and (max-width: 480px) {
 
   body {
@@ -505,22 +933,18 @@
 
 // media queries screen 481 - 768 px (bigger phones and tablets)
 @media screen and (min-width: 481px) and  (max-width: 768px) {
- 
+
   body {
-    overflow: hidden;
-    width: 100%;
-    height: 100vh;
+    width: 100vw;
+    height: 100%;
 
-    .starsky { // making the style for the space with stars
-      width: 100%;
+    .starsky { // making the style for the space with stars (this is the full site, because of the star sky animation)
+      width: 100vw;
       height: 100vh;
-
+    
       @include layout1();
-      overflow: hidden;
       position: relative;
       background: linear-gradient(to bottom, rgb(1, 1, 74), black);
-
-    }
 
       .starryHeaven {
         position: absolute;
@@ -549,15 +973,15 @@
       }
     }
 
-    .solaris {
+      .solaris {
       @include layout1();
       width: 100%;
       z-index: 0;
+      
 
       .sunny {
         @include layout2();
-        
-        margin-bottom: 10px;
+      
 
         .sun {
           background-image: linear-gradient(
@@ -574,31 +998,35 @@
       }
     }
 
-    .planets {
+      .planets {
       @include layout2();
       width: 100%;
-      padding: 50px 10px 20px 10px;
+      padding: 20px 1px 20px 1px;
 
       .merkurius {
         @include planetLayout();
+        margin: 4px;
 
         background-image: linear-gradient(to bottom, grey, white);
 
-        width: 20px;
-        height: 20px;
+        width: 15px;
+        height: 15px;
+      
       }
 
       .venus {
         @include planetLayout();
+        margin: 4px;
 
         background-image: linear-gradient(to bottom, white, yellow, pink);
 
-        width: 30px;
-        height: 30px;
+        width: 25px;
+        height: 25px;
       }
 
       .earth {
         @include planetLayout();
+        margin: 4px;
 
         background-image: linear-gradient(
           to bottom,
@@ -607,12 +1035,13 @@
           blue
         );
 
-        width: 40px;
-        height: 40px;
+        width: 30px;
+        height: 30px;
       }
 
       .mars {
         @include planetLayout();
+        margin: 4px;
         background-color: brown;
 
         width: 35px;
@@ -621,6 +1050,7 @@
 
       .jupiter {
         @include planetLayout();
+        margin: 4px;
 
         background-image: linear-gradient(
           to bottom,
@@ -630,13 +1060,14 @@
           rgb(97, 57, 20)
         );
 
-        width: 70px;
-        height: 70px;
+        width: 60px;
+        height: 60px;
       }
 
       .planetWithRing1 {
         .saturnus {
           @include planetLayout();
+          margin: 4px;
           position: relative;
 
           background-image: linear-gradient(
@@ -645,14 +1076,14 @@
             rgb(181, 145, 135)
           );
 
-          width: 60px;
-          height: 60px;
+          width: 50px;
+          height: 50px;
         }
 
         .saturnusRing {
-          position: absolute;
-          top: 260px;
-          left: 382px;
+          position: fixed;
+          top: 212px;
+          left: 185px;
 
           background-color: rgba(106, 97, 63, 0.675);
           border-radius: 50%;
@@ -665,6 +1096,7 @@
 
       .uranus {
         @include planetLayout();
+        margin: 4px;
 
         background-image: linear-gradient(
           to bottom,
@@ -679,6 +1111,7 @@
       .planetWithRing2 {
         .neptunes {
           @include planetLayout();
+          margin: 4px;
           position: relative;
 
           background-image: linear-gradient(
@@ -689,13 +1122,12 @@
 
           width: 50px;
           height: 50px;
-          margin-right: 15px;
         }
 
         .neptunesRing {
-          position: absolute;
-          top: 256px;
-          left: 548px;
+          position:fixed;
+          top: 212px;
+          left: 300px;
 
           background-color: rgba(151, 142, 111, 0.612);
           border-radius: 50%;
@@ -706,7 +1138,7 @@
         }
       }
     }
-  }
+  
 
   main {
     @include layout1();
@@ -721,6 +1153,7 @@
       font-family: "genos", sans-serif;
       font-weight: 300;
       font-size: 100px;
+      color: gold;
     }
 
     .searchbar {
@@ -752,15 +1185,13 @@
     }
 
     .popUp {
-      @include layout1();
-      justify-content: space-between;
+      @include layout2();
+      // flex-wrap: wrap;
       align-items: center;
-      // display: none;
-      position: absolute;
-
-
-      width: 90%;
-      height: 90vh;
+      display: none;
+      // position: absolute;
+      width: 95%;
+      height: 80vh;
 
       background-image: linear-gradient(
         180deg,
@@ -770,52 +1201,51 @@
       );
 
       color: rgb(255, 237, 134);
-      box-shadow: 1px 1px 10px 6px rgba(223, 193, 117, 0.568);
       border-radius: 10px;
 
-      padding: 5px;
+      padding: 2px;
+      margin-top: 150px;
 
       .btnClose {
         width: 50px;
         height: 50px;
         border-radius: 50%;
-        margin: 15px 50px 0px 500px;
-        background:  rgb(255, 237, 134);
+        border: none;
+        background:  rgba(255, 237, 134, 0.712);
+        margin: 10px 0px 0px 290px;
       }
 
       .Name {
         font-family: "genos", sans-serif;
         font-weight: 400;
         font-size: 60px;
-
-        margin-left: 50px;
-        padding: 0;
       }
 
       .latinName {
         font-family: "genos", sans-serif;
         font-size: xx-large;
         font-weight: 300;
-        margin: -5px 0px 5px 60px;
-        padding: 0;
       }
 
       .information {
         @include layout2();
+        overflow-y: auto;
         width: 98%;
-        height: 75%;
+        height: 70vh;
         flex-wrap: wrap;
         justify-content: space-between;
         font-family: "ubuntu", sans-serif;
         font-weight: 300;
         font-size: medium;
-        background-color: black;
-        border-radius: 10px;
+        background: linear-gradient(to bottom, rgb(29, 28, 28), rgba(0, 0, 0, 0.904)) ;
+        border-radius: 2px;
 
         padding: 10px;
+        margin: 5px;
 
         .sectionOne {
           @include sectionLayout();
+
 
           .type {
             @include rubriker();
@@ -880,7 +1310,7 @@
 
           .facts {
             @include rubriker();
-            margin-bottom: 5px;
+            margin-bottom: 2px;
 
             .factsOf {
               @include of();
@@ -897,8 +1327,7 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    margin-top: 200px;
-    margin-left: 15px;
+    margin-top: 130px;
     padding-bottom: 10px;
 
     .copyW {
@@ -927,6 +1356,8 @@
       }
     }
   }
+}
+}
 }
 // media queries screen 769 - 1024 px (tablets and laptop)
 @media screen and (min-width: 769px) and (max-width: 1024px) {

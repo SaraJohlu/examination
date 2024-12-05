@@ -88,8 +88,8 @@ function fetchData() {
           minTemp.textContent = `Natt: ${planet.temp.night} °C`;
           moons.textContent = `${planet.moons.length}`;
           facts1.textContent = `${planet.desc}`;
-          facts2.textContent = `Jorddygn runt solen: ${planet.orbitalPeriod}`;
-          facts3.textContent = `Jorddygn runt sin egen axel ${planet.rotation}`;
+          facts2.textContent = `Jorddygn runt solen: ${planet.orbitalPeriod} dygn`;
+          facts3.textContent = `Jorddygn runt sin egen axel: ${planet.rotation} dygn`;
   
           popUp.style.display = "block";
 
