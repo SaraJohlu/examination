@@ -51,15 +51,16 @@
   font-size: x-large;
   padding: 10px;
 }
-// style of solaris
+// style of solaris//
+
 // media screen max 480 (smaller mobilephones)
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 @media screen and (max-width: 480px) {
-  *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
 
   body {
     overflow: hidden;
@@ -504,14 +505,14 @@
 
 // media queries screen 481 - 768 px (bigger phones and tablets)
 @media screen and (min-width: 481px) and  (max-width: 768px) {
-
+ 
   body {
     overflow: hidden;
-    width: 100vw;
-    height: 100%;
+    width: 100%;
+    height: 100vh;
 
     .starsky { // making the style for the space with stars
-      width: 100vw;
+      width: 100%;
       height: 100vh;
 
       @include layout1();
@@ -555,7 +556,7 @@
 
       .sunny {
         @include layout2();
-        margin-top: -100px;
+        
         margin-bottom: 10px;
 
         .sun {

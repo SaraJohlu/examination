@@ -1,10 +1,11 @@
 /*Mixins including the styiling of different elements*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 @media screen and (max-width: 480px) {
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
   body {
     overflow: hidden;
     width: 100vw;
@@ -426,11 +427,11 @@
 @media screen and (min-width: 481px) and (max-width: 768px) {
   body {
     overflow: hidden;
-    width: 100vw;
-    height: 100%;
+    width: 100%;
+    height: 100vh;
   }
   body .starsky {
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -476,7 +477,6 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    margin-top: -100px;
     margin-bottom: 10px;
   }
   body .solaris .sunny .sun {
