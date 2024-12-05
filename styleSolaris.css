@@ -5,7 +5,7 @@
   box-sizing: border-box;
 }
 
-@media screen and (min-width: 360px) and (max-width: 480px) {
+@media screen and (min-width: 360px) and (max-width: 768px) {
   body {
     width: 100vw;
     height: 100%;
@@ -223,7 +223,7 @@
   body .starsky main .popUp .btnClose {
     position: absolute;
     top: 20px;
-    left: 190px;
+    left: 300px;
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -263,14 +263,13 @@
     margin: 5px;
   }
   body .starsky main .popUp .information .sectionOne {
-    width: 200px;
-    padding: 5px;
+    width: 135px;
     margin-bottom: 10px;
     justify-content: center;
     align-items: center;
   }
   body .starsky main .popUp .information .sectionOne .type {
-    width: 30vw;
+    width: 20vw;
     font-weight: 200;
     text-decoration: underline;
   }
@@ -278,16 +277,16 @@
     font-weight: 100;
     font-size: x-large;
     padding: 10px;
+    text-align: center;
   }
   body .starsky main .popUp .information .sectionTwo {
-    width: 200px;
-    padding: 5px;
+    width: 135px;
     margin-bottom: 10px;
     justify-content: center;
     align-items: center;
   }
   body .starsky main .popUp .information .sectionTwo .circumference {
-    width: 30vw;
+    width: 20vw;
     font-weight: 200;
     text-decoration: underline;
   }
@@ -295,16 +294,16 @@
     font-weight: 100;
     font-size: x-large;
     padding: 10px;
+    text-align: center;
   }
   body .starsky main .popUp .information .sectionThree {
-    width: 200px;
-    padding: 5px;
+    width: 135px;
     margin-bottom: 10px;
     justify-content: center;
     align-items: center;
   }
   body .starsky main .popUp .information .sectionThree .distanceSun {
-    width: 30vw;
+    width: 20vw;
     font-weight: 200;
     text-decoration: underline;
   }
@@ -312,16 +311,16 @@
     font-weight: 100;
     font-size: x-large;
     padding: 10px;
+    text-align: center;
   }
   body .starsky main .popUp .information .sectionFour {
-    width: 200px;
-    padding: 5px;
+    width: 135px;
     margin-bottom: 10px;
     justify-content: center;
     align-items: center;
   }
   body .starsky main .popUp .information .sectionFour .temperature {
-    width: 30vw;
+    width: 20vw;
     font-weight: 200;
     text-decoration: underline;
   }
@@ -329,16 +328,16 @@
     font-weight: 100;
     font-size: x-large;
     padding: 10px;
+    text-align: center;
   }
   body .starsky main .popUp .information .sectionFive {
-    width: 200px;
-    padding: 5px;
+    width: 135px;
     margin-bottom: 10px;
     justify-content: center;
     align-items: center;
   }
   body .starsky main .popUp .information .sectionFive .moons {
-    width: 30vw;
+    width: 20vw;
     font-weight: 200;
     text-decoration: underline;
   }
@@ -346,13 +345,14 @@
     font-weight: 100;
     font-size: x-large;
     padding: 10px;
+    text-align: center;
   }
   body .starsky main .popUp .information .sectionSix {
     width: 100%;
     font-size: medium;
   }
   body .starsky main .popUp .information .sectionSix .facts {
-    width: 30vw;
+    width: 20vw;
     font-weight: 200;
     text-decoration: underline;
     margin-bottom: 2px;
@@ -361,6 +361,438 @@
     font-weight: 100;
     font-size: x-large;
     padding: 10px;
+    text-align: center;
+  }
+  body .starsky footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 130px;
+    padding-bottom: 10px;
+  }
+  body .starsky footer .copyW {
+    justify-content: center;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.668);
+    padding: 5px;
+    margin: 5px;
+  }
+  body .starsky footer .links {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+  }
+  body .starsky footer .links .instagram {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.667);
+    text-align: center;
+    justify-content: center;
+    align-content: center;
+    color: black;
+    text-decoration: none;
+    margin: 0px 10px 0px 0px;
+  }
+  body .starsky footer .links .github {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.667);
+    text-align: center;
+    justify-content: center;
+    align-content: center;
+    color: black;
+    text-decoration: none;
+    margin: 0px 10px 0px 0px;
+  }
+  body .starsky footer .links .mejl {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.667);
+    text-align: center;
+    justify-content: center;
+    align-content: center;
+    color: black;
+    text-decoration: none;
+    margin: 0px 10px 0px 0px;
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  body {
+    width: 100vw;
+    height: 100%;
+  }
+  body .starsky {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom, rgb(1, 1, 74), black);
+  }
+  body .starsky .starryHeaven {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  body .starsky .starryHeaven .stars {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background-color: white;
+    border-radius: 50%;
+    animation: twinkle 5s infinite alternate;
+  }
+  @keyframes twinkle {
+    0%, 100% {
+      opacity: 0.2;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+  body .starsky .solaris {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    z-index: 0;
+  }
+  body .starsky .solaris .sunny {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  body .starsky .solaris .sunny .sun {
+    background-image: linear-gradient(to bottom, rgb(238, 195, 53), rgb(202, 97, 22), red);
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 80px 10px rgba(255, 68, 0, 0.692);
+  }
+  body .starsky .solaris .planets {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 20px 1px 20px 1px;
+  }
+  body .starsky .solaris .planets .merkurius {
+    border-radius: 50%;
+    box-shadow: inset 2px 5px 10px rgb(255, 255, 255);
+    margin: 4px;
+    background-image: linear-gradient(to bottom, grey, white);
+    width: 15px;
+    height: 15px;
+  }
+  body .starsky .solaris .planets .venus {
+    border-radius: 50%;
+    box-shadow: inset 2px 5px 10px rgb(255, 255, 255);
+    margin: 4px;
+    background-image: linear-gradient(to bottom, white, yellow, pink);
+    width: 25px;
+    height: 25px;
+  }
+  body .starsky .solaris .planets .earth {
+    border-radius: 50%;
+    box-shadow: inset 2px 5px 10px rgb(255, 255, 255);
+    margin: 4px;
+    background-image: linear-gradient(to bottom, rgb(51, 73, 241), rgb(9, 109, 1), blue);
+    width: 30px;
+    height: 30px;
+  }
+  body .starsky .solaris .planets .mars {
+    border-radius: 50%;
+    box-shadow: inset 2px 5px 10px rgb(255, 255, 255);
+    margin: 4px;
+    background-color: brown;
+    width: 35px;
+    height: 35px;
+  }
+  body .starsky .solaris .planets .jupiter {
+    border-radius: 50%;
+    box-shadow: inset 2px 5px 10px rgb(255, 255, 255);
+    margin: 4px;
+    background-image: linear-gradient(to bottom, rgb(97, 57, 20), rgb(212, 232, 123), rgb(162, 65, 52), rgb(97, 57, 20));
+    width: 60px;
+    height: 60px;
+  }
+  body .starsky .solaris .planets .planetWithRing1 {
+    position: relative;
+  }
+  body .starsky .solaris .planets .planetWithRing1 .saturnus {
+    position: relative;
+    border-radius: 50%;
+    box-shadow: inset 2px 5px 10px rgb(255, 255, 255);
+    margin: 4px;
+    background-image: linear-gradient(180deg, rgb(176, 193, 54), rgb(181, 145, 135));
+    width: 50px;
+    height: 50px;
+  }
+  body .starsky .solaris .planets .planetWithRing1 .saturnusRing {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: rgba(106, 97, 63, 0.675);
+    border-radius: 50%;
+    width: 100px;
+    height: 7px;
+    transform: translate(-50%, -50%) rotate(150deg);
+  }
+  body .starsky .solaris .planets .uranus {
+    border-radius: 50%;
+    box-shadow: inset 2px 5px 10px rgb(255, 255, 255);
+    margin: 4px;
+    background-image: linear-gradient(to bottom, rgb(42, 35, 171), rgb(250, 250, 247));
+    width: 40px;
+    height: 40px;
+  }
+  body .starsky .solaris .planets .planetWithRing2 {
+    position: relative;
+  }
+  body .starsky .solaris .planets .planetWithRing2 .neptunes {
+    position: relative;
+    border-radius: 50%;
+    box-shadow: inset 2px 5px 10px rgb(255, 255, 255);
+    margin: 4px;
+    background-image: linear-gradient(180deg, rgb(54, 86, 193), rgb(46, 24, 132));
+    width: 50px;
+    height: 50px;
+  }
+  body .starsky .solaris .planets .planetWithRing2 .neptunesRing {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: rgba(151, 142, 111, 0.612);
+    border-radius: 50%;
+    width: 80px;
+    height: 7px;
+    transform: translate(-50%, -50%) rotate(210deg);
+  }
+  body .starsky main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    z-index: 0;
+  }
+  body .starsky main .section1h1 {
+    text-align: center;
+    align-items: center;
+    font-family: "genos", sans-serif;
+    font-weight: 300;
+    font-size: 100px;
+    color: gold;
+  }
+  body .starsky main .searchbar {
+    text-align: center;
+    align-items: center;
+    margin-top: 10px;
+    width: 280px;
+    height: 60px;
+    background-color: rgba(240, 248, 255, 0.79);
+    border: none;
+    border-radius: 10px;
+    text-align: center;
+    font-size: large;
+    font-weight: 700;
+    color: rgba(53, 46, 46, 0.908);
+    z-index: 0;
+  }
+  body .starsky main .button {
+    width: 45px;
+    height: 45px;
+    background-color: rgba(240, 248, 255, 0.79);
+    border: none;
+    border-radius: 50%;
+    margin-left: -55px;
+  }
+  body .starsky main .popUp {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-items: center;
+    justify-content: center;
+    display: none;
+    position: absolute;
+    top: 10px;
+    width: 90%;
+    height: 95vh;
+    background-image: linear-gradient(180deg, rgba(21, 25, 37, 0.826), rgba(2, 2, 54, 0.841), rgba(12, 1, 26, 0.79));
+    color: rgb(255, 237, 134);
+    border-radius: 10px;
+    padding: 2px;
+  }
+  body .starsky main .popUp .btnClose {
+    position: absolute;
+    top: 20px;
+    left: 400px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255, 237, 134, 0.712);
+  }
+  body .starsky main .popUp .Name {
+    font-family: "genos", sans-serif;
+    font-weight: 400;
+    font-size: 60px;
+    margin-left: 30px;
+  }
+  body .starsky main .popUp .latinName {
+    font-family: "genos", sans-serif;
+    font-size: xx-large;
+    font-weight: 300;
+    margin-left: 40px;
+    margin-top: -15px;
+    margin-bottom: 10px;
+  }
+  body .starsky main .popUp .information {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 95%;
+    height: 75vh;
+    justify-content: space-around;
+    font-family: "ubuntu", sans-serif;
+    font-weight: 300;
+    font-size: medium;
+    background: linear-gradient(to bottom, rgb(29, 28, 28), rgba(0, 0, 0, 0.904));
+    border-radius: 2px;
+    padding: 2px;
+    margin: 20px;
+  }
+  body .starsky main .popUp .information .sectionOne {
+    width: 135px;
+    margin-bottom: 10px;
+    justify-content: center;
+    align-items: center;
+  }
+  body .starsky main .popUp .information .sectionOne .type {
+    width: 20vw;
+    font-weight: 200;
+    text-decoration: underline;
+  }
+  body .starsky main .popUp .information .sectionOne .type .typOf {
+    font-weight: 100;
+    font-size: x-large;
+    padding: 10px;
+    text-align: center;
+  }
+  body .starsky main .popUp .information .smallFacts {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 15px;
+  }
+  body .starsky main .popUp .information .sectionTwo {
+    width: 135px;
+    margin-bottom: 10px;
+    justify-content: center;
+    align-items: center;
+  }
+  body .starsky main .popUp .information .sectionTwo .circumference {
+    width: 20vw;
+    font-weight: 200;
+    text-decoration: underline;
+  }
+  body .starsky main .popUp .information .sectionTwo .circumference .circumOf {
+    font-weight: 100;
+    font-size: x-large;
+    padding: 10px;
+    text-align: center;
+  }
+  body .starsky main .popUp .information .sectionThree {
+    width: 135px;
+    margin-bottom: 10px;
+    justify-content: center;
+    align-items: center;
+  }
+  body .starsky main .popUp .information .sectionThree .distanceSun {
+    width: 20vw;
+    font-weight: 200;
+    text-decoration: underline;
+  }
+  body .starsky main .popUp .information .sectionThree .distanceSun .distOf {
+    font-weight: 100;
+    font-size: x-large;
+    padding: 10px;
+    text-align: center;
+  }
+  body .starsky main .popUp .information .sectionFour {
+    width: 135px;
+    margin-bottom: 10px;
+    justify-content: center;
+    align-items: center;
+  }
+  body .starsky main .popUp .information .sectionFour .temperature {
+    width: 20vw;
+    font-weight: 200;
+    text-decoration: underline;
+  }
+  body .starsky main .popUp .information .sectionFour .temperature .tempOf {
+    font-weight: 100;
+    font-size: x-large;
+    padding: 10px;
+    text-align: center;
+  }
+  body .starsky main .popUp .information .sectionFive {
+    width: 135px;
+    margin-bottom: 10px;
+    justify-content: center;
+    align-items: center;
+  }
+  body .starsky main .popUp .information .sectionFive .moons {
+    width: 20vw;
+    font-weight: 200;
+    text-decoration: underline;
+  }
+  body .starsky main .popUp .information .sectionFive .moons .moonsOf {
+    font-weight: 100;
+    font-size: x-large;
+    padding: 10px;
+    text-align: center;
+  }
+  body .starsky main .popUp .information .sectionSix {
+    width: 100%;
+    font-size: medium;
+  }
+  body .starsky main .popUp .information .sectionSix .facts {
+    width: 20vw;
+    font-weight: 200;
+    text-decoration: underline;
+    margin-bottom: 2px;
+  }
+  body .starsky main .popUp .information .sectionSix .facts .factsOf {
+    font-weight: 100;
+    font-size: x-large;
+    padding: 10px;
+    text-align: center;
   }
   body .starsky footer {
     display: flex;
