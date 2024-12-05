@@ -40,7 +40,7 @@
 
 @mixin sectionLayout { // The sections, the containers for information text on pop up screen
   width: 200px;
-  padding: 10px;
+  padding: 5px;
   margin-bottom: 10px;
   justify-content: center;
   align-items: center;
@@ -55,11 +55,17 @@
 // media screen max 480 (smaller mobilephones)
 
 @media screen and (max-width: 480px) {
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
   body {
     overflow: hidden;
     width: 100vw;
     height: 100%;
+   
 
     .starsky { // making the style for the space with stars
       width: 100vw;
@@ -69,8 +75,9 @@
       overflow: hidden;
       position: relative;
       background: linear-gradient(to bottom, rgb(1, 1, 74), black);
-
+     
     }
+    
 
       .starryHeaven {
         position: absolute;
@@ -78,7 +85,7 @@
         left: 0;
         width: 100%;
         height: 100%;
-
+        
       .stars {
         position: absolute;
         width: 2px;
@@ -102,6 +109,7 @@
     .solaris {
       @include layout1();
       width: 100%;
+      z-index: 0;
       
 
       .sunny {
@@ -127,11 +135,11 @@
     .planets {
       @include layout2();
       width: 100%;
-      padding: 50px 1px 20px 1px;
+      padding: 40px 1px 20px 1px;
 
       .merkurius {
         @include planetLayout();
-        margin: 0px;
+        margin: 8px;
 
         background-image: linear-gradient(to bottom, grey, white);
 
@@ -142,6 +150,7 @@
 
       .venus {
         @include planetLayout();
+        margin: 8px;
 
         background-image: linear-gradient(to bottom, white, yellow, pink);
 
@@ -151,6 +160,7 @@
 
       .earth {
         @include planetLayout();
+        margin: 8px;
 
         background-image: linear-gradient(
           to bottom,
@@ -165,6 +175,7 @@
 
       .mars {
         @include planetLayout();
+        margin: 8px;
         background-color: brown;
 
         width: 35px;
@@ -172,7 +183,8 @@
       }
 
       .jupiter {
-        // @include planetLayout();
+        @include planetLayout();
+        margin: 8px;
 
         background-image: linear-gradient(
           to bottom,
@@ -189,6 +201,7 @@
       .planetWithRing1 {
         .saturnus {
           @include planetLayout();
+          margin: 8px;
           position: relative;
 
           background-image: linear-gradient(
@@ -203,8 +216,8 @@
 
         .saturnusRing {
           position: absolute;
-          top: 260px;
-          left: 382px;
+          top: 255px;
+          left: 265px;
 
           background-color: rgba(106, 97, 63, 0.675);
           border-radius: 50%;
@@ -217,6 +230,7 @@
 
       .uranus {
         @include planetLayout();
+        margin: 8px;
 
         background-image: linear-gradient(
           to bottom,
@@ -231,6 +245,7 @@
       .planetWithRing2 {
         .neptunes {
           @include planetLayout();
+          margin: 8px;
           position: relative;
 
           background-image: linear-gradient(
@@ -241,13 +256,12 @@
 
           width: 50px;
           height: 50px;
-          margin-right: 15px;
         }
 
         .neptunesRing {
           position: absolute;
-          top: 256px;
-          left: 548px;
+          top: 255px;
+          left: 400px;
 
           background-color: rgba(151, 142, 111, 0.612);
           border-radius: 50%;
@@ -258,7 +272,7 @@
         }
       }
     }
-  }
+  
 
   main {
     @include layout1();
@@ -270,10 +284,10 @@
     .section1h1 {
       text-align: center;
       align-items: center;
-      color: $color1;
       font-family: "genos", sans-serif;
       font-weight: 300;
       font-size: 100px;
+      color: gold;
     }
 
     .searchbar {
@@ -305,15 +319,15 @@
     }
 
     .popUp {
-      @include layout1();
-      justify-content: space-between;
+      @include layout2();
+      flex-wrap: wrap;
       align-items: center;
-      // display: none;
+      display: none;
       position: absolute;
 
 
-      width: 90%;
-      height: 90vh;
+      width: 95%;
+      height: 70vh;
 
       background-image: linear-gradient(
         180deg,
@@ -323,17 +337,19 @@
       );
 
       color: rgb(255, 237, 134);
-      box-shadow: 1px 1px 10px 6px rgba(223, 193, 117, 0.568);
       border-radius: 10px;
 
-      padding: 5px;
+      padding: 2px;
+      margin-bottom: 250px;
 
       .btnClose {
         width: 50px;
         height: 50px;
         border-radius: 50%;
-        margin: 15px 50px 0px 500px;
-        background:  rgb(255, 237, 134);
+        border: none;
+        margin: 10px 5px 0px 380px;
+        background:  rgba(255, 237, 134, 0.712);
+        
       }
 
       .Name {
@@ -341,7 +357,7 @@
         font-weight: 400;
         font-size: 60px;
 
-        margin-left: 50px;
+        margin: -40px  50px;
         padding: 0;
       }
 
@@ -349,26 +365,28 @@
         font-family: "genos", sans-serif;
         font-size: xx-large;
         font-weight: 300;
-        margin: -5px 0px 5px 60px;
+        margin: 20px 0px 15px 60px;
         padding: 0;
       }
 
       .information {
         @include layout2();
         width: 98%;
-        height: 75%;
+        height: 80vh;
         flex-wrap: wrap;
         justify-content: space-between;
         font-family: "ubuntu", sans-serif;
         font-weight: 300;
         font-size: medium;
-        background-color: black;
-        border-radius: 10px;
+        background: linear-gradient(to bottom, rgb(29, 28, 28), rgba(0, 0, 0, 0.904)) ;
+        border-radius: 2px;
 
         padding: 10px;
+        margin: 5px;
 
         .sectionOne {
           @include sectionLayout();
+
 
           .type {
             @include rubriker();
@@ -433,7 +451,7 @@
 
           .facts {
             @include rubriker();
-            margin-bottom: 5px;
+            margin-bottom: 2px;
 
             .factsOf {
               @include of();
@@ -481,6 +499,8 @@
     }
   }
 }
+}
+
 
 // media queries screen 481 - 768 px (bigger phones and tablets)
 @media screen and (min-width: 481px) and  (max-width: 768px) {
@@ -697,7 +717,6 @@
     .section1h1 {
       text-align: center;
       align-items: center;
-      color: $color1;
       font-family: "genos", sans-serif;
       font-weight: 300;
       font-size: 100px;
