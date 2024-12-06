@@ -2,7 +2,7 @@
 ## KYH Front end utbildning 2024-2026
 Examinationsuppgift javascript 1 2024-12-06
 
-![Projekt framsidan, sidan gjord av mig Sara](<C:\Users\sara_\Desktop\KYH\examinationsuppgifter\Skärmbild 2024-12-06 122957.png>)
+![Projekt framsidan, sidan gjord av mig Sara](<C:Skärmbild 2024-12-06 122957.png>)
 
 # Projektet 
 Solaris, en individuell uppgift som skulle inkludera javascript, html och css. Inga bilder tillåtna och uppgiften handla om att skapa en webbsida
