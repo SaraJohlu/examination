@@ -32,9 +32,11 @@
 }
 
 @mixin rubriker { // Headlines on the pop up screen
-  width: 20vw;
+  width: 30vw;
   font-weight: 200;
   text-decoration: underline;
+  margin-bottom: 10px;
+  font-size: large;
 }
 
 @mixin sectionLayout { // The sections, the containers for information text on pop up screen
@@ -62,21 +64,23 @@
 @media screen and (min-width: 360px) and (max-width: 768px) { // media screen max 768 (smaller mobilephones to tablets)
   body {
     width: 100vw;
-    height: 100%;
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
 
     .starsky {
       // making the style for the space with stars (this is the full site, because of the star sky animation)
-      width: 100vw;
+      width: 100%;
       height: 100vh;
       @include layout1();
-      background: linear-gradient(to bottom, rgb(1, 1, 74), black);
+      background: linear-gradient(to bottom, rgb(0, 0, 53), black);
+
 
       .starryHeaven {
-        position: absolute;
         top: 0;
         left: 0;
         width: 100%;
-        height: 100%;
+        height: 100vh;
 
         .stars {
           position: absolute;
@@ -100,45 +104,67 @@
       }
 
       .solaris {
-        @include layout1();
-        width: 100%;
+        @include layout2();
+        justify-content: center;
+       
+        width: 90%;
         z-index: 0;
 
-        .sunny {
-          @include layout2();
-
           .sun {
+            position: absolute;
+            top: 50px;
+
             background-image: linear-gradient(
               to bottom,
               rgb(238, 195, 53),
               rgb(202, 97, 22),
               red
             );
-            width: 250px;
-            height: 250px;
+            width: 200px;
+            height: 200px;
             border-radius: 50%;
-            box-shadow: 0px 0px 80px 10px rgba(255, 68, 0, 0.692);
+            margin-top: -100px;
+            
+           
+            @keyframes pulse-shadow { // Pulse animation for making it look like the suns warth pulse out in space
+              0% {
+                box-shadow: 0px 0px 200px 25px rgba(255, 68, 0, 0.692);
+              }
+              50% {
+                box-shadow:0px 0px 100px 7px rgba(255, 68, 0, 0.692); 
+              }
+              100% {
+                box-shadow: 0px 0px 200px 20px rgba(255, 68, 0, 0.692); //Same properties to make it more in flow
+              }
+            };
+
+            animation: pulse-shadow 5s infinite ease-in-out;
           }
-        }
 
         .planets {
           @include layout2();
+          justify-content: center;
+          align-items: center;
+          position: absolute;
           width: 100%;
-          padding: 20px 1px 20px 1px;
+          padding: 20px 0px 20px 0px;
+          top: 170px;
+          margin-right: 20px;
+      
 
           .merkurius {
             @include planetLayout();
-            margin: 4px;
+            margin: 1px;
 
-            background-image: linear-gradient(to bottom, grey, white);
+            background-image: linear-gradient(to bottom, grey, white, rgb(99, 90, 90));
 
-            width: 15px;
-            height: 15px;
+            width: 20px;
+            height: 20px;
           }
 
           .venus {
             @include planetLayout();
-            margin: 4px;
+            margin: 1px;
 
             background-image: linear-gradient(to bottom, white, yellow, pink);
 
@@ -148,7 +174,7 @@
 
           .earth {
             @include planetLayout();
-            margin: 4px;
+            margin: 2px;
 
             background-image: linear-gradient(
               to bottom,
@@ -157,22 +183,23 @@
               blue
             );
 
-            width: 30px;
-            height: 30px;
-          }
-
-          .mars {
-            @include planetLayout();
-            margin: 4px;
-            background-color: brown;
-
             width: 35px;
             height: 35px;
           }
 
+          .mars {
+            @include planetLayout();
+            margin: 2px;
+
+            background-color: brown;
+
+            width: 30px;
+            height: 30px;
+          }
+
           .jupiter {
             @include planetLayout();
-            margin: 4px;
+            margin: 2px;
 
             background-image: linear-gradient(
               to bottom,
@@ -192,7 +219,7 @@
               position: relative;
               @include planetLayout();
               
-              margin: 4px;
+              margin: 2px;
 
               background-image: linear-gradient(
                 180deg,
@@ -220,7 +247,7 @@
 
           .uranus {
             @include planetLayout();
-            margin: 4px;
+            margin: 2px;
 
             background-image: linear-gradient(
               to bottom,
@@ -228,8 +255,8 @@
               rgb(250, 250, 247)
             );
 
-            width: 40px;
-            height: 40px;
+            width: 35px;
+            height: 35px;
           }
 
           .planetWithRing2 {
@@ -239,7 +266,7 @@
               position: relative;
               @include planetLayout();
 
-              margin: 4px;
+              margin: 2px;
 
               background-image: linear-gradient(
                 180deg,
@@ -247,8 +274,8 @@
                 rgb(46, 24, 132)
               );
 
-              width: 50px;
-              height: 50px;
+              width: 45px;
+              height: 45px;
             }
             .neptunesRing {
               position: absolute;
@@ -259,7 +286,7 @@
               background-color: rgba(151, 142, 111, 0.612);
               border-radius: 50%;
 
-              width: 80px;
+              width: 90px;
               height: 7px;
               transform: translate(-50%, -50%) rotate(210deg); // translate metod makes the ring turn around sideways
             }
@@ -269,7 +296,9 @@
 
       main {
         @include layout1();
-        width: 100%;
+        position: absolute;
+        top: 250px;
+        width: 95%;
         justify-content: center;
         align-items: center;
         z-index: 0;
@@ -285,9 +314,8 @@
 
         .searchbar {
           text-align: center;
-          align-items: center;
           margin-top: 10px;
-          width: 280px;
+          width: 300px;
           height: 60px;
           background-color: rgba(240, 248, 255, 0.79);
           border: none;
@@ -312,14 +340,15 @@
         }
 
         .popUp {
+          position: relative;
+
           @include layout2();
           align-items: center;
+          justify-content: center;
           display: none;
 
-          position: absolute;
-          top: 10px;
           width: 95%;
-          height: 95vh;
+          height: 85vh;
 
           background-image: linear-gradient(
             180deg,
@@ -332,11 +361,13 @@
           border-radius: 10px;
 
           padding: 2px;
+          margin-top: -400px;
+          margin-right: 20px;
 
           .btnClose {
             position: absolute;
             top: 20px;
-            left: 300px;
+            left: 250px;
             width: 50px;
             height: 50px;
             border-radius: 50%;
@@ -347,13 +378,13 @@
           .Name {
             font-family: "genos", sans-serif;
             font-weight: 400;
-            font-size: 60px;
+            font-size: 40px;
             margin-left: 30px;
           }
 
           .latinName {
             font-family: "genos", sans-serif;
-            font-size: xx-large;
+            font-size: 30px;
             font-weight: 300;
             margin-left: 40px;
             margin-top: -15px;
@@ -363,13 +394,13 @@
           .information {
             @include layout2();
             overflow-y: auto;
-            width: 98%;
-            height: 75vh;
+            overflow-x: hidden;
+            width: 95%;
+            height: 65vh;
             flex-wrap: wrap;
-            justify-content: space-between;
             font-family: "ubuntu", sans-serif;
             font-weight: 300;
-            font-size: medium;
+            font-size: small;
             background: linear-gradient(
               to bottom,
               rgb(29, 28, 28),
@@ -377,8 +408,16 @@
             );
             border-radius: 2px;
 
-            padding: 10px;
-            margin: 5px;
+            padding: 20px;
+            margin: 15px;
+
+            .smallFacts {
+              @include layout2();
+              flex-wrap: wrap;
+              justify-content: space-between;
+              align-items: center;
+              width: 100%;
+            }
 
             .sectionOne {
               @include sectionLayout();
@@ -409,6 +448,7 @@
 
               .distanceSun {
                 @include rubriker();
+                width: 20vh;
 
                 .distOf {
                   @include of();
@@ -442,7 +482,7 @@
 
             .sectionSix {
               width: 100%;
-              font-size: medium;
+              font-size: small;
 
               .facts {
                 @include rubriker();
@@ -459,12 +499,12 @@
 
       footer {
         @include layout1();
+        position: absolute;
         justify-content: space-between;
         justify-content: center;
         align-items: center;
         width: 100%;
-        margin-top: 130px;
-        padding-bottom: 10px;
+        top: 700px;
 
         .copyW {
           justify-content: center;
@@ -496,24 +536,26 @@
   }
 }
 
-@media screen and (min-width: 769px) and (max-width: 1024px) { // media queries screen 769 - 1024 px (tablets and laptop)
+@media screen and (min-width: 769px) and (max-width: 1024px) { // media screen 769 - 1024 px (tablets and laptop)
   body {
     width: 100vw;
-    height: 100%;
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
 
     .starsky {
       // making the style for the space with stars (this is the full site, because of the star sky animation)
-      width: 100vw;
+      width: 100%;
       height: 100vh;
       @include layout1();
-      background: linear-gradient(to bottom, rgb(1, 1, 74), black);
+      background: linear-gradient(to bottom, rgb(0, 0, 53), black);
+
 
       .starryHeaven {
-        position: absolute;
         top: 0;
         left: 0;
         width: 100%;
-        height: 100%;
+        height: 100vh;
 
         .stars {
           position: absolute;
@@ -537,55 +579,74 @@
       }
 
       .solaris {
-        @include layout1();
-        width: 100%;
+        @include layout2();
+        justify-content: center;
+       
+        width: 90%;
         z-index: 0;
 
-        .sunny {
-          @include layout2();
-
           .sun {
+            position: absolute;
+            top: 50px;
+
             background-image: linear-gradient(
               to bottom,
               rgb(238, 195, 53),
               rgb(202, 97, 22),
               red
             );
-            width: 250px;
-            height: 250px;
+            width: 500px;
+            height: 500px;
             border-radius: 50%;
-            box-shadow: 0px 0px 80px 10px rgba(255, 68, 0, 0.692);
+            
+           
+            @keyframes pulse-shadow { // Pulse animation for making it look like the suns warth pulse out in space
+              0% {
+                box-shadow: 0px 0px 200px 25px rgba(255, 68, 0, 0.692);
+              }
+              50% {
+                box-shadow:0px 0px 100px 7px rgba(255, 68, 0, 0.692); 
+              }
+              100% {
+                box-shadow: 0px 0px 200px 20px rgba(255, 68, 0, 0.692); //Same properties to make it more in flow
+              }
+            };
+
+            animation: pulse-shadow 5s infinite ease-in-out;
           }
-        }
 
         .planets {
           @include layout2();
+          justify-content: center;
+          align-items: center;
+          position: absolute;
           width: 100%;
           padding: 20px 1px 20px 1px;
+          top: 250px;
 
           .merkurius {
             @include planetLayout();
-            margin: 4px;
+            margin: 2px;
 
-            background-image: linear-gradient(to bottom, grey, white);
+            background-image: linear-gradient(to bottom, grey, white, rgb(99, 90, 90));
 
-            width: 15px;
-            height: 15px;
+            width: 75px;
+            height: 75px;
           }
 
           .venus {
             @include planetLayout();
-            margin: 4px;
+            margin: 2px;
 
             background-image: linear-gradient(to bottom, white, yellow, pink);
 
-            width: 25px;
-            height: 25px;
+            width: 85px;
+            height: 85px;
           }
 
           .earth {
             @include planetLayout();
-            margin: 4px;
+            margin: 2px;
 
             background-image: linear-gradient(
               to bottom,
@@ -594,22 +655,23 @@
               blue
             );
 
-            width: 30px;
-            height: 30px;
+            width: 90px;
+            height: 90px;
           }
 
           .mars {
             @include planetLayout();
-            margin: 4px;
+            margin: 2px;
+
             background-color: brown;
 
-            width: 35px;
-            height: 35px;
+            width: 75px;
+            height: 75px;
           }
 
           .jupiter {
             @include planetLayout();
-            margin: 4px;
+            margin: 2px;
 
             background-image: linear-gradient(
               to bottom,
@@ -619,8 +681,8 @@
               rgb(97, 57, 20)
             );
 
-            width: 60px;
-            height: 60px;
+            width: 150px;
+            height: 150px;
           }
 
           .planetWithRing1 {
@@ -629,7 +691,7 @@
               position: relative;
               @include planetLayout();
               
-              margin: 4px;
+              margin: 2px;
 
               background-image: linear-gradient(
                 180deg,
@@ -637,8 +699,8 @@
                 rgb(181, 145, 135)
               );
 
-              width: 50px;
-              height: 50px;
+              width: 95px;
+              height: 95px;
             }
             .saturnusRing {
               position: absolute;
@@ -649,7 +711,7 @@
               background-color: rgba(106, 97, 63, 0.675);
               border-radius: 50%;
 
-              width: 100px;
+              width: 160px;
               height: 7px;
               transform: translate(-50%, -50%) rotate(150deg); // translate method makes the ring turn around sideways
             }
@@ -657,7 +719,7 @@
 
           .uranus {
             @include planetLayout();
-            margin: 4px;
+            margin: 2px;
 
             background-image: linear-gradient(
               to bottom,
@@ -665,8 +727,8 @@
               rgb(250, 250, 247)
             );
 
-            width: 40px;
-            height: 40px;
+            width: 85px;
+            height: 85px;
           }
 
           .planetWithRing2 {
@@ -676,7 +738,7 @@
               position: relative;
               @include planetLayout();
 
-              margin: 4px;
+              margin: 2px;
 
               background-image: linear-gradient(
                 180deg,
@@ -684,8 +746,8 @@
                 rgb(46, 24, 132)
               );
 
-              width: 50px;
-              height: 50px;
+              width: 95px;
+              height: 95px;
             }
             .neptunesRing {
               position: absolute;
@@ -696,7 +758,7 @@
               background-color: rgba(151, 142, 111, 0.612);
               border-radius: 50%;
 
-              width: 80px;
+              width: 150px;
               height: 7px;
               transform: translate(-50%, -50%) rotate(210deg); // translate metod makes the ring turn around sideways
             }
@@ -706,7 +768,9 @@
 
       main {
         @include layout1();
-        width: 100%;
+        position: absolute;
+        top: 400px;
+        width: 95%;
         justify-content: center;
         align-items: center;
         z-index: 0;
@@ -716,7 +780,7 @@
           align-items: center;
           font-family: "genos", sans-serif;
           font-weight: 300;
-          font-size: 100px;
+          font-size: 200px;
           color: gold;
         }
 
@@ -724,7 +788,7 @@
           text-align: center;
           align-items: center;
           margin-top: 10px;
-          width: 280px;
+          width: 600px;
           height: 60px;
           background-color: rgba(240, 248, 255, 0.79);
           border: none;
@@ -749,15 +813,15 @@
         }
 
         .popUp {
-          @include layout1();
+          position: relative;
+
+          @include layout2();
           align-items: center;
           justify-content: center;
           display: none;
 
-          position: absolute;
-          top: 10px;
-          width: 90%;
-          height: 95vh;
+          width: 100%;
+          height: 85vh;
 
           background-image: linear-gradient(
             180deg,
@@ -770,11 +834,12 @@
           border-radius: 10px;
 
           padding: 2px;
+          margin-top: -700px;
 
           .btnClose {
             position: absolute;
-            top: 20px;
-            left: 400px;
+            top: 30px;
+            left: 300px;
             width: 50px;
             height: 50px;
             border-radius: 50%;
@@ -799,15 +864,15 @@
           }
 
           .information {
-            @include layout1();
-            width: 95%;
-            height: 75vh;
-            justify-content: space-around;
-
+            @include layout2();
+            overflow-y: auto;
+            overflow-x: hidden;
+            width: 98%;
+            height: 65vh;
+            flex-wrap: wrap;
             font-family: "ubuntu", sans-serif;
             font-weight: 300;
-            font-size: medium;
-
+            font-size: x-large;
             background: linear-gradient(
               to bottom,
               rgb(29, 28, 28),
@@ -815,8 +880,16 @@
             );
             border-radius: 2px;
 
-            padding: 2px;
-            margin: 20px;
+            padding: 20px;
+            margin: 15px;
+
+            .smallFacts {
+              @include layout2();
+              flex-wrap: wrap;
+              justify-content: space-between;
+              align-items: center;
+              width: 100%;
+            }
 
             .sectionOne {
               @include sectionLayout();
@@ -826,17 +899,8 @@
 
                 .typOf {
                   @include of();
-           
                 }
               }
-            }
-            .smallFacts {
-              @include layout2();
-              
-              justify-content: left;
-              align-items: center;
-              width: 90%;
-              padding: 15px
             }
 
             .sectionTwo {
@@ -847,7 +911,6 @@
 
                 .circumOf {
                   @include of();
-        
                 }
               }
             }
@@ -857,11 +920,10 @@
 
               .distanceSun {
                 @include rubriker();
-                font-size: large;
+                width: 20vh;
 
                 .distOf {
                   @include of();
-           
                 }
               }
             }
@@ -871,11 +933,9 @@
 
               .temperature {
                 @include rubriker();
-                font-size: large;
 
                 .tempOf {
                   @include of();
-                
                 }
               }
             }
@@ -894,8 +954,7 @@
 
             .sectionSix {
               width: 100%;
-              font-size: medium;
-              padding: 10px;
+              font-size: x-large;
 
               .facts {
                 @include rubriker();
@@ -912,12 +971,12 @@
 
       footer {
         @include layout1();
+        position: absolute;
         justify-content: space-between;
         justify-content: center;
         align-items: center;
         width: 100%;
-        margin-top: 130px;
-        padding-bottom: 10px;
+        top: 790px;
 
         .copyW {
           justify-content: center;
@@ -953,21 +1012,23 @@
 @media screen and (min-width: 1025px) { // media queries screen 1025px and more (laptops and desk screens)
   body {
     width: 100vw;
-    height: 100%;
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
 
     .starsky {
       // making the style for the space with stars (this is the full site, because of the star sky animation)
-      width: 100vw;
+      width: 100%;
       height: 100vh;
       @include layout1();
-      background: linear-gradient(to bottom, rgb(1, 1, 74), black);
+      background: linear-gradient(to bottom, rgb(0, 0, 53), black);
+
 
       .starryHeaven {
-        position: absolute;
         top: 0;
         left: 0;
         width: 100%;
-        height: 100%;
+        height: 100vh;
 
         .stars {
           position: absolute;
@@ -992,15 +1053,15 @@
 
       .solaris {
         @include layout2();
-        margin-right: 200px;
-        margin-bottom: 100px;
-        width: 100%;
+        justify-content: center;
+       
+        width: 90%;
         z-index: 0;
 
-        .sunny {
-          @include layout2();
-
           .sun {
+            position: absolute;
+            top: 50px;
+
             background-image: linear-gradient(
               to bottom,
               rgb(238, 195, 53),
@@ -1010,6 +1071,7 @@
             width: 500px;
             height: 500px;
             border-radius: 50%;
+            
            
             @keyframes pulse-shadow { // Pulse animation for making it look like the suns warth pulse out in space
               0% {
@@ -1025,12 +1087,15 @@
 
             animation: pulse-shadow 5s infinite ease-in-out;
           }
-        }
 
         .planets {
           @include layout2();
-          width: 100%;
-          padding: 20px 5px 20px 5px;
+          justify-content: center;
+          align-items: center;
+          position: absolute;
+          width: 90%;
+          padding: 20px 1px 20px 1px;
+          top: 170px;
 
           .merkurius {
             @include planetLayout();
@@ -1176,11 +1241,12 @@
 
       main {
         @include layout1();
-        width: 100%;
+        position: absolute;
+        top: 400px;
+        width: 95%;
         justify-content: center;
         align-items: center;
         z-index: 0;
-        margin-top: -200px;
 
         .section1h1 {
           text-align: center;
@@ -1220,14 +1286,15 @@
         }
 
         .popUp {
+          position: relative;
+
           @include layout2();
           align-items: center;
+          justify-content: center;
           display: none;
 
-          position: absolute;
-          top: 10px;
-          width: 95%;
-          height: 95vh;
+          width: 100%;
+          height: 85vh;
 
           background-image: linear-gradient(
             180deg,
@@ -1240,6 +1307,7 @@
           border-radius: 10px;
 
           padding: 2px;
+          margin-top: -700px;
 
           .btnClose {
             position: absolute;
@@ -1271,10 +1339,10 @@
           .information {
             @include layout2();
             overflow-y: auto;
+            overflow-x: hidden;
             width: 98%;
-            height: 80vh;
+            height: 65vh;
             flex-wrap: wrap;
-            justify-content: space-between;
             font-family: "ubuntu", sans-serif;
             font-weight: 300;
             font-size: x-large;
@@ -1285,14 +1353,14 @@
             );
             border-radius: 2px;
 
-            padding: 10px;
+            padding: 20px;
             margin: 15px;
 
             .smallFacts {
               @include layout2();
               justify-content: space-around;
               align-items: center;
-              width: 90%;
+              width: 100%;
             }
 
             .sectionOne {
@@ -1374,12 +1442,12 @@
 
       footer {
         @include layout1();
+        position: absolute;
         justify-content: space-between;
         justify-content: center;
         align-items: center;
         width: 100%;
-        margin-top: 130px;
-        padding-bottom: 10px;
+        top: 750px;
 
         .copyW {
           justify-content: center;

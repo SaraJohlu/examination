@@ -1,10 +1,12 @@
-// Declaring varibles with const by getting HTML element id with getElementId
+// Declaring variables with const by getting HTML element id with getElementId
 const body = document.getElementById("body");
+const main = document.getElementById("main");
+const solarisContainer = document.getElementById("solarisSystemet")
 const planet = document.getElementById("searchbar");
 
 fetchData();
-
-// creating a function for the data being fetched with POST from the API, making it possible for users to send informaton and get back data.
+// The function for the program that's going to run when the webside is entered.
+// starting with creating the function  with the data being fetched with POST from the API, making it possible for users to send informaton and get back data.
 function fetchData() {
   const urlApi =
     "https://n5n3eiyjb0.execute-api.eu-north-1.amazonaws.com/bodies"; // Declare varible too our HTTP API
@@ -48,6 +50,9 @@ function fetchData() {
       // Gettign the data from API server and putting the data into HTML file by getting element id
       console.log("Data:", data);
 
+      // Set the rules for the variables and rules for what's going to happen when interacting with API server //
+
+      // declaring variables getting element id from html document.
       const Name = document.getElementById("Name");
       const latinName = document.getElementById("latinName");
       const type = document.getElementById("type");
@@ -60,25 +65,20 @@ function fetchData() {
       const facts3 = document.getElementById("facts3");
       const moons = document.getElementById("moons");
 
-      //   Name.textContent = data.bodies[1].name;
-      //   latinName.textContent = data.bodies[1].latinName;
-      //   type.textContent = data.bodies[1].type;
-      //   distanceSun.textContent = `${data.bodies[1].distanceSun} km`;
-      //   circumference.textContent = `${data.bodies[1].circumference} km `;
-      //   maxTemp.textContent = `Dagtid: ${data.bodies[1].temp.day} celsius`;
-      //   minTemp.textContent = `Natt: ${data.bodies[1].temp.night} celsius`;
-      //   moons.textContent = data.bodies[1].moons.length;
-      //   facts1.textContent = data.bodies[1].desc;
-      //   facts2.textContent = `Jorddygn runt solen: ${data.bodies[1].orbitalPeriod}`;
-      //   facts3.textContent = `Jorddygn runt sin egen axel ${data.bodies[1].rotation}`;
-
       function userInput() {
         // A function for the user input to fetch the right data for every planet
-        const searchbar = document.getElementById("searchbar").value.toLowerCase();
+        const searchbar = document
+          .getElementById("searchbar")
+          .value.toLowerCase();
         const popUp = document.getElementById("popUp");
-        const planet = data.bodies.find(body => body.name.toLowerCase() === searchbar); // takes the users input, search and compare with the API data
+        const planet = data.bodies.find(
+          (body) => body.name.toLowerCase() === searchbar
+        ); // takes the users input, search and compare with the API data
 
-        if(planet){  //User writes in the planet it wants to search for
+        // making if statement depending on the users inpit
+
+        if (planet) {
+          //User writes in the planet it wants to search for, here use the declared variables
           Name.textContent = `${planet.name}`;
           latinName.textContent = `${planet.latinName}`;
           type.textContent = `${planet.type}`;
@@ -90,53 +90,56 @@ function fetchData() {
           facts1.textContent = `${planet.desc}`;
           facts2.textContent = `Jorddygn runt solen: ${planet.orbitalPeriod} dygn`;
           facts3.textContent = `Jorddygn runt sin egen axel: ${planet.rotation} dygn`;
-  
-          popUp.style.display = "block";
 
+          popUp.style.display = "block"; // showing the pop up screen
+        } else {
+          alert("Inte en planet eller stjärna, testa igen"); // alert message if user haven't written anything, haven't spelled right or haven't written a planet
         }
-       
-         else {
-          alert("Inte en planet eller stjärna, testa igen");
-        }
- 
-    };
-
-    const button = document.getElementById("button");
-    button.addEventListener("click", userInput);
-
-    const closeBtn = document.getElementById("btnClose");
-    closeBtn.addEventListener("click", () => {
-      if (popUp.style.display = "block") {
-        popUp.style.display = "none"
       }
-    });
+      // other functions inside the program that also should be run, like the button rules and star sky.
 
-    starryStars();
+      const button = document.getElementById("button"); // Decalring button from id in html document
+
+      button.addEventListener("click", userInput); // What's happening when the sunmit button is clicked. Both getting the pop up screen with data and also cursor pointer
+      button.addEventListener("mouseover", () => {
+        button.style.cursor = "pointer";
+      });
+
+      const closeBtn = document.getElementById("btnClose"); // Decalring closeBtn from id in html document
+      closeBtn.addEventListener("click", () => {
+        // Function to make the pop up screen disapear when user press this button
+        if ((popUp.style.display = "block")) {
+          popUp.style.display = "none";
+        }
+      });
+
+      closeBtn.addEventListener("mouseover", () => {
+        // The close button getting a pointer
+        closeBtn.style.cursor = "pointer";
+      });
+
+      // The function for the star sky as background
+      starryStars(); // running the star function within fetchData
 
       function starryStars() {
         const starContain = document.querySelector(".starryHeaven");
-        const numberStars = 200;
-    
-        for(let i=0; i < numberStars; i++){
+        const numberStars = 200; // the number of stars
+
+        for (let i = 0; i < numberStars; i++) {
           const stars = document.createElement("div");
-          stars.classList.add("stars");
-          stars.style.top = `${Math.random() *100}vh`;
-          stars.style.left = `${Math.random() *100}vw`;
-          stars.style.animationDuration = `${Math.random() *5+2}s`;
-          stars.style.animationDelay = `${Math.random() *2}s`;
+          stars.classList.add("stars"); // adding a class to the div element
+          stars.style.top = `${Math.random() * 100}vh`; // Making the stars appear randomly over the site
+          stars.style.left = `${Math.random() * 100}vw`;
+          stars.style.animationDuration = `${Math.random() * 5 + 2}s`; // Making the stars twinkle
+          stars.style.animationDelay = `${Math.random() * 2}s`; // delay on the stars
 
-          starContain.appendChild(stars);
-        };
-    
-    };
-
-
+          starContain.appendChild(stars); // the new div being added too the document element stars
+        }
+      }
     })
 
     .catch((error) => {
+      // If data cant be fethced the program notice the error messeage
       console.error("Error", error);
     });
 }
-
-
-
