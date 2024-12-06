@@ -2,6 +2,7 @@
 ## KYH Front end utbildning 2024-2026
 Examinationsuppgift javascript 1 2024-12-06
 
+![Skärmbild 2024-12-06 122957](https://github.com/user-attachments/assets/30a6b2de-b5c2-44d7-b0e1-53c475590bf1)
 
 # Projektet 
 Solaris, en individuell uppgift som skulle inkludera javascript, html och css. Inga bilder tillåtna och uppgiften handla om att skapa en webbsida
